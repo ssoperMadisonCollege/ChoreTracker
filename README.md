@@ -14,4 +14,33 @@ unavailable to us when we're away.  Out of sight, out of mind.  It would great
 to receive periodic notifications on our phones to remind us of chores we
 need to do and errands we need to run.
 
+### Project Technologies/Techniques 
+
+* Security/Authentication
+  * Admin role: create/read/update/delete (crud) of all data
+  * User role: submit chores to be tracked
+  * All: You must be logged in to view ChoreTracker content
+* Database (MySQL and Hibernate)
+  * Store users and roles
+  * Store ChoreTracker information
+* Web Services or APIs
+  * Amazon Simple Notification Service or something similar for notifying users to do their chores
+* Amazon Simple Notification Service or something similar(independent research topic)
+* Logging
+  * Configurable logging using Log4J. In production, only errors will normally be logged, but logging at a debug level can be turned on to facilitate trouble-shooting. 
+* Site and database hosted on AWS
+* Unit Testing
+  * JUnit tests to achieve 80% code coverage 
+
+### Design
+
+* [Screen Design](wireframes/ChoreTracker_wireframes1.png)
+* [Application Flow](DesignDocuments/applicationFlow.md)
+* [Database Design](DesignDocuments/)
+
+### [Project Plan](ProjectPlan.md)
+
+### [Time Log](TimeLog.md) 
+### [Journal](Journal.md)
+
 

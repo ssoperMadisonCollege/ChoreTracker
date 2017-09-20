@@ -3,15 +3,15 @@
 ### Week 1
 - [x] Create project repository on GitHub
 - [x] Complete Problem Statement
-- [ ] Determine possible Web Services or APIs to use
-- [ ] List technologies and how they will be used
+- [x] Determine possible Web Services or APIs to use
+- [x] List technologies and how they will be used
 - [x] Time log entries
 - [x] Begin project plan
 
 ### Week 2
 - [ ] Document application flow - wireframes have clickable links in the online version.
 - [x] Complete screen design (on paper)
-- [ ] Create project structure in IntelliJ
+- [x] Create project structure in IntelliJ
 - [x] Add project to repository
 - [ ] Deploy application to Openshift
 - [ ] Complete database design
