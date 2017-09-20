@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="chore_tracker:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ChoreTracker.war">
+      <element id="artifact" artifact-name="chore_tracker:war exploded" />
+    </root>
+  </artifact>
+</component>
