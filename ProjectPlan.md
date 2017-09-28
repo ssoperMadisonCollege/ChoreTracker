@@ -13,7 +13,7 @@
 - [x] Complete screen design (on paper)
 - [x] Create project structure in IntelliJ
 - [x] Add project to repository
-- [ ] Deploy application to Openshift
+- [ ] Deploy application to AWS
 - [ ] Complete database design
 - [x] Time log entries
 - [x] Complete project plan. Based on the design should be able to lay out 
@@ -53,7 +53,6 @@ more detail.
 - [ ] Integration with AWS Simple SMS Service
 - [ ] Create add chore report functionality
 - [ ] Create add chore functionality
-- [ ] Set up Continuous Integration on openshift
 
 ### Week 7
 - [ ] Time log entries
@@ -68,8 +67,8 @@ more detail.
 
 ### Week 9
 - [ ] Time log entries
-- [ ] Create databse on openshift
-- [ ] Set up authentication and db access in app on openshift
+- [ ] Create database on AWS???
+- [ ] Set up authentication and db access in app on AWS???
 - [ ] Add password reset/reminder function
 
 ### Week 10
