@@ -12,5 +12,5 @@
 | 9/16/17 | Finished setting up personal laptop environment, worked on exercise for week 3 | 3 |  |
 | 9/19/17 | Finished exercise 3, signed up for professional development time slot (topic: Git stuff)  | 3 |  |
 | 9/20/17 | Watching week 4 videos  | 1.5 | Need to just start a JSP or make my database for the individual project. |
-| 9/27/17 | Completed week 4 exercise, watching week 5  | 4 | Pretty heavy work week/other class commitments. I look forward to catching up quite a bit between now and week 6.  |
-
+| 9/27/17 | Completed week 4 exercise, watching week 5  | 4 | Pretty heavy work week/other class commitments. I look forward to catching up quite a bit between now and week 6.  | 
+| 9/30/17 | Completed design reviews for Jamie and Brooke, working on integrating all our exercises thus far into my individual project, starting with designing/normalizing the database. | 6 | Tough to commit to a database design right now. |
