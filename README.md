@@ -34,9 +34,9 @@ need to do and errands we need to run.
 
 ### Design
 
-* [Screen Design](wireframes/ChoreTracker_wireframes1.png)
+* [Screen Design](DesignDocuments/wireframes/ChoreTracker_wireframes1.png)
 * [Application Flow](DesignDocuments/applicationFlow.md)
-* [Database Design](DesignDocuments/)
+* [Database Design](DesignDocuments/databaseDesign.png)
 
 ### [Project Plan](ProjectPlan.md)
 
