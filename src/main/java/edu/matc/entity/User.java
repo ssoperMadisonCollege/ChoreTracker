@@ -3,11 +3,13 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
+
 
 /**
  * A class to represent a user.
  *
- * @author ssoper
+ * @author ssoper 10/3/2017
  */
 
 @Entity
