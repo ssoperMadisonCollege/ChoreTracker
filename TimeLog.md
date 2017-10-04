@@ -15,6 +15,8 @@
 | 9/27/17 | Completed week 4 exercise, watching week 5  | 4 | Pretty heavy work week/other class commitments. I look forward to catching up quite a bit between now and week 6.  | 
 | 9/30/17 | Completed design reviews for Jamie and Brooke, working on integrating all our exercises thus far into my individual project, starting with designing/normalizing the database. | 6 | Tough to commit to a database design right now.  Also, I lost my entire class design to a google drive/ draw.io syncing issue, had to start the class diagram from scratch. |
 | 10/1/17 | Poked at the class diagram I lost yesterday.  | 0.5 | Frustrated. |
-| 10/2/17 | Completed initial class diagram for individual project.  Writing database creation scripts.  | 4 | Playing catch-up from set-backs.  | 
+| 10/2/17 | Completed initial class diagram for individual project.  Writing database creation scripts.  | 4 | Playing catch-up from set-backs.  |
+| 10/3/17 | Continued work on making database scripts.  Decided to focus on MVP for the individual project checkpoint: got hibernate working, User class, DAO, and DAOTest working.  Reorganized project structure.  | 4 | Feeling better, next step is to deploy to AWS.  | 
+ 
  
 
