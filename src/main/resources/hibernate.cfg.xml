@@ -14,6 +14,7 @@
         <property name="connection.username">root</property>
         <property name="connection.password">student</property>
 
+        <!-- TODO drop and create auto ddl for easy test table creation -->
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 

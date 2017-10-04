@@ -80,4 +80,5 @@ public class UserDaoTest {
         assertEquals("The first name wasn't successfully updated.", "Foo_bar", user.getFirstName());
     }
 
+    //TODO use .equals() on each entity for easy testing - instert a user to the db and read it back
 }

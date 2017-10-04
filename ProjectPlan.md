@@ -13,8 +13,8 @@
 - [x] Complete screen design (on paper)
 - [x] Create project structure in IntelliJ
 - [x] Add project to repository
-- [ ] Deploy application to AWS
-- [ ] Complete database design
+- [x] Deploy application to AWS
+- [x] Complete database design
 - [x] Time log entries
 - [x] Complete project plan. Based on the design should be able to lay out 
 more detail.
@@ -25,14 +25,14 @@ more detail.
 - [ ] Create database and all tables/columns locally
 - [x] Time log entries
 - [x] Determine independent research topic
-- [ ] Create class diagram
-- [ ] Set up logging
-- [ ] Set up unit testing
+- [x] Create class diagram
+- [x] Set up logging
+- [x] Set up unit testing
 
 ### Week 4
-- [ ] Add Hibernate config
-- [ ] Create DAO for user crud
-- [ ] Add unit tests for DAO
+- [x] Add Hibernate config
+- [x] Create DAO for user crud
+- [x] Add unit tests for DAO
 - [ ] Add user login  
 - [ ] Add user registration
 - [x] Time log entries
@@ -41,7 +41,7 @@ more detail.
 
 ### Week 5
 
-- [ ] Time log entries
+- [x] Time log entries
 - [ ] Create DAO for chores
 - [ ] Create DAO for chore report
 - [ ] Create display chore report functionality
@@ -49,7 +49,7 @@ more detail.
 - [ ] Add tests for new functionality
 
 ### Week 6
-- [ ] Time log entries
+- [x] Time log entries
 - [ ] Integration with AWS Simple SMS Service
 - [ ] Create add chore report functionality
 - [ ] Create add chore functionality
