@@ -20,7 +20,7 @@
 more detail.
 
 ### Week 3
-- [ ] Start making JSPs
+- [x] Start making JSPs
 - [ ] Add in bootstrap
 - [ ] Create database and all tables/columns locally
 - [x] Time log entries
@@ -33,15 +33,16 @@ more detail.
 - [x] Add Hibernate config
 - [x] Create DAO for user crud
 - [x] Add unit tests for DAO
-- [ ] Add user login  
+- [x] Add user login  
 - [ ] Add user registration
 - [x] Time log entries
-- [ ] Add Maven for building
+- [x] Add Maven for building
 - [ ] Add entities for remaining tables
 
 ### Week 5
 
 - [x] Time log entries
+- [x] Set up AWS EC2 instance
 - [ ] Create DAO for chores
 - [ ] Create DAO for chore report
 - [ ] Create display chore report functionality
@@ -53,6 +54,7 @@ more detail.
 - [ ] Integration with AWS Simple SMS Service
 - [ ] Create add chore report functionality
 - [ ] Create add chore functionality
+- [x] Set up tomcat authorization locally
 
 ### Week 7
 - [ ] Time log entries
