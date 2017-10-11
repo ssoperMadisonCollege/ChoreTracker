@@ -31,6 +31,8 @@ public class User {
     private String email;
     @Column(name = "user_phone")
     private String phone;
+    @Column(name = "user_name")
+    private String userName;
 
     /**
      * No-argument constructor to instantiate new User
@@ -54,6 +56,7 @@ public class User {
         this.password = password;
         this.email = email;
         this.phone = phone;
+        this.userName = userName;
     }
 
     public int getUserId() {
@@ -102,5 +105,13 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

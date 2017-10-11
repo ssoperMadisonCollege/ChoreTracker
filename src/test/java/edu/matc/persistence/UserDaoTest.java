@@ -50,6 +50,7 @@ public class UserDaoTest {
         user.setPassword("password");
         user.setEmail("silly@email.joke");
         user.setPhone("867-5309");
+        user.setUserName("ssoper");
 
         int newIdForNewUser = dao.addUser(user);
         User actualUser = dao.getUser(newIdForNewUser);
