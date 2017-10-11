@@ -17,6 +17,7 @@
 | 10/1/17 | Poked at the class diagram I lost yesterday.  | 0.5 | Frustrated. |
 | 10/2/17 | Completed initial class diagram for individual project.  Writing database creation scripts.  | 4 | Playing catch-up from set-backs.  |
 | 10/3/17 | Continued work on making database scripts.  Decided to focus on MVP for the individual project checkpoint: got hibernate working, User class, DAO, and DAOTest working.  Reorganized project structure.  | 4 | Feeling better, next step is to deploy to AWS.  | 
+| 10/10/17 | Continued work on making database scripts.  Added feedback for professional development presentation from last week.  Set up a user_roles tables locally and modified my users table and DAO entities/tests to include a user_name.  | 2 |  | 
  
  
 
