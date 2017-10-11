@@ -1,7 +1,7 @@
-<Context docBase="ChoreTracker" path="/ChoreTracker" reloadable="true">
+<Context docBase="ChoreTracker" path="/" reloadable="true">
     <Realm className="org.apache.catalina.realm.JDBCRealm"
            driverName="com.mysql.jdbc.Driver"
-           connectionURL="jdbc:mysql://localhost:3306/ChoreTracker?user=tomcat&amp;password=#SsTomCat26*"
+           connectionURL="jdbc:mysql://localhost:3306/ChoreTracker?user=root&amp;password=student"
            userTable="users" userNameCol="user_name" userCredCol="user_password"
            userRoleTable="user_roles" roleNameCol="role_name" >
     </Realm>

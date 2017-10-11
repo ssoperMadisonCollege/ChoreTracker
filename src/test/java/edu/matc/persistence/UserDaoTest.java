@@ -62,7 +62,7 @@ public class UserDaoTest {
     @Test
     public void deleteUserTest() throws Exception {
 
-        // Should probably add a temporary user before deleting so I can run this more than once
+        // TODO Should probably add a temporary user before deleting so I can run this more than once
         User user = dao.getUser(6);
         assertTrue(user != null);
         dao.deleteUser(6);
