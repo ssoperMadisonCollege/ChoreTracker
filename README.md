@@ -23,11 +23,17 @@ need to do and errands we need to run.  It would also be nice to see when
 a person in a household creates or completes a task so that it can be started
 on the fly - or avoided to eliminate duplication of effort.
 
+Another drawback of the board is keeping track of tasks that need to be done
+on an interval, like doing maintenance on household appliances. These types of
+tasks tend to linger in the 'to do' section for a long time and so users are 
+continuously reminded of tasks that don't need to be done for months at a time.
+This is annoying and uses valuable mental RAM that could be put to better use.
+
 I would like to create an application that makes use of Google's calendar API 
 and perhaps a text messaging API to notify users when household chores are 
-assigned and when they're completed.  This way, members in a household don't
-have to remember to do their chores - the chore application reminds them
-automatically.
+assigned, when they're due, and when they're completed.  This way, members in 
+a household don't have to remember to do their chores - the chore application 
+reminds them automatically.
 
 ### Project Technologies/Techniques 
 
