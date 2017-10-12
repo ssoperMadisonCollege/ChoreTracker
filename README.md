@@ -5,14 +5,29 @@ For over 8 years, my wife and I have relied on various self-organization and
 communication tactics to satisfactorily distribute domestic tasks in a mutually
 beneficial way.  Sometimes we come close to figuring it out, but for the most 
 part - we've failed.  Our current solution is a Kanban board that is tacked up
-to a wall in our kitchen. It works, but only if we're not very busy and we 
-remember to look at the board.
+to a wall in our kitchen. A Kanban board is divided into three columns: to do, 
+doing, and done. You move a sticky note with a task written on it through each 
+category until it's finished.  This keeps each person in our household aware 
+of what tasks need doing, who is working on them, and what its status is. The
+board works some of the time, but as soon as we have a busy week, we forget to 
+look at the board and some tasks tend to slip through the cracks.  More 
+information on Kanban below:  
+
 * Kanban Board : https://en.wikipedia.org/wiki/Kanban_board
 
 The major drawback of the board is that it is not mobile and thus it is 
-unavailable to us when we're away.  Out of sight, out of mind.  It would great
+unavailable to us when we're away. This is inconvenient for tasks that need to 
+be done outside the household.  Out of sight, out of mind.  It would great
 to receive periodic notifications on our phones to remind us of chores we
-need to do and errands we need to run.
+need to do and errands we need to run.  It would also be nice to see when
+a person in a household creates or completes a task so that it can be started
+on the fly - or avoided to eliminate duplication of effort.
+
+I would like to create an application that makes use of Google's calendar API 
+and perhaps a text messaging API to notify users when household chores are 
+assigned and when they're completed.  This way, members in a household don't
+have to remember to do their chores - the chore application reminds them
+automatically.
 
 ### Project Technologies/Techniques 
 
