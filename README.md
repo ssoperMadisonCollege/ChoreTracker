@@ -58,7 +58,7 @@ approach so that it's easy to use on any input device.
 
 * [Screen Design](DesignDocuments/wireframes/ChoreTracker_wireframes1.png)
 * [Application Flow](DesignDocuments/applicationFlow.md)
-* [Database Design](DesignDocuments/databaseDesign.png)
+* [Database Design](DesignDocuments/databaseDesignV2.png)
 
 ### [Project Plan](ProjectPlan.md)
 
