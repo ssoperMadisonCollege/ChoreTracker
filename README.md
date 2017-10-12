@@ -17,7 +17,7 @@ information on Kanban below:
 
 The major drawback of the board is that it is not mobile and thus it is 
 unavailable to us when we're away. This is inconvenient for tasks that need to 
-be done outside the household.  Out of sight, out of mind.  It would great
+be done outside the household.  Out of sight, out of mind. It would great
 to receive periodic notifications on our phones to remind us of chores we
 need to do and errands we need to run.  It would also be nice to see when
 a person in a household creates or completes a task so that it can be started
@@ -29,11 +29,12 @@ tasks tend to linger in the 'to do' section for a long time and so users are
 continuously reminded of tasks that don't need to be done for months at a time.
 This is annoying and uses valuable mental RAM that could be put to better use.
 
-I would like to create an application that makes use of Google's calendar API 
+I would like to create a web application that makes use of Google's calendar API 
 and perhaps a text messaging API to notify users when household chores are 
 assigned, when they're due, and when they're completed.  This way, members in 
 a household don't have to remember to do their chores - the chore application 
-reminds them automatically.
+reminds them automatically. The application will be designed with a mobile-first
+approach so that it's easy to use on any input device.
 
 ### Project Technologies/Techniques 
 
