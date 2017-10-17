@@ -9,7 +9,7 @@
 - [x] Begin project plan
 
 ### Week 2
-- [ ] Document application flow - wireframes have clickable links in the online version.
+- [x] Document application flow.
 - [x] Complete screen design (on paper)
 - [x] Create project structure in IntelliJ
 - [x] Add project to repository
