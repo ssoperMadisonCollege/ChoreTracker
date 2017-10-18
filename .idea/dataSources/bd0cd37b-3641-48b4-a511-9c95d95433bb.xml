@@ -26,10 +26,9 @@
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="14" parent="8" name="chore_date">
+    <column id="14" parent="8" name="chore_start_date">
       <Position>3</Position>
       <DataType>date|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="15" parent="8" name="chore_time_interval">
       <Position>4</Position>
@@ -38,7 +37,6 @@
     <column id="16" parent="8" name="assigned_to_user">
       <Position>5</Position>
       <DataType>varchar(30)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <key id="17" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
