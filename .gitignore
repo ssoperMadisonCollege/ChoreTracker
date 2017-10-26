@@ -32,6 +32,8 @@ src/main/webapp/META-INF/context.xml
 
 # IntelliJ
 /out/
+.idea
+*.iml
 
 # Maven
 /target/
@@ -51,5 +53,9 @@ crashlytics-build.properties
 fabric.properties
 
 # Logging files
-hibernate.log
+*.log
+
+# MAC OS files
+.DS_Store
+
 
