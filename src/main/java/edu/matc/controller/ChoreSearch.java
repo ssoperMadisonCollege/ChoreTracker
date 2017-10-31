@@ -1,7 +1,7 @@
 package edu.matc.controller;
 
-import edu.matc.entity.User;
-import edu.matc.persistence.UserDao;
+import edu.matc.entity.Chore;
+import edu.matc.persistence.ChoreDao;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -14,27 +14,27 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * A simple servlet to welcome the user.
+ * A simple servlet to search for chores.
  * @author ssoper
  */
 
 @WebServlet(
-        urlPatterns = {"/userSearch"}
+        urlPatterns = {"/choreSearch"}
 )
 
-public class UserSearch extends HttpServlet {
+public class ChoreSearch extends HttpServlet {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        UserDao UserDao = new UserDao();
-        List<User> users = UserDao.getAllUsers();
-        log.error(users.toString());
-        req.setAttribute("users", users);
+        ChoreDao ChoreDao = new ChoreDao();
+        List<Chore> chores = ChoreDao.getAllChores();
+        log.error(chores.toString());
+        req.setAttribute("chores", chores);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/userResults.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/choreResults.jsp");
         dispatcher.forward(req, resp);
     }
 }
