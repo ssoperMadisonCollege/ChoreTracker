@@ -23,6 +23,8 @@
 | 10/17/17 | Working on checkpoint 3 requirements for the individual project. | 3 | I have been sick for the last several days and have been working long hours (no sick days, need money).  I committed about about 13 hours to a project for another class over the weekend.  Feeling very run down.  Found a useful stack overflow post for recording start dates and time intervals for my chores: https://stackoverflow.com/questions/5183630/calendar-recurring-repeating-events-best-storage-method, and something on converting to unix timestamps from dates: https://www.epochconverter.com/programming/mysql |
 | 10/18/17 | Finished checkpoint 3 requirements for the individual project.  Working on completing SOAP activities. | 6.5 | Working with classmates who have figured out some of the authentication/AWS gotchas is extremely helpful.  I cancelled my professional development presentation for next week - need to re-prioritize and gain some momentum on this project before focusing on that for the moment. #Agile #MVP  |
 | 10/25/17 | Worked on REST activities, hashing out Git issues with team project. | 4 | Weekend was eaten up by AJAX class project and take home exam.  Thankfully Java EE was lighter this week. |
+| 10/27/17 | Created chore and house entities, updated time log. | 0.5 | Coding on the bus on the way to work is actually pretty great. |
+| 10/31/17 | Created chore and house DAOs, updated time log. | 0.5 | More bus coding. |
  
  
 
