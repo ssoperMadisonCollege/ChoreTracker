@@ -58,4 +58,6 @@ fabric.properties
 # MAC OS files
 .DS_Store
 
+#SQL Files
+SQL/
 
