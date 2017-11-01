@@ -24,7 +24,7 @@
 | 10/18/17 | Finished checkpoint 3 requirements for the individual project.  Working on completing SOAP activities. | 6.5 | Working with classmates who have figured out some of the authentication/AWS gotchas is extremely helpful.  I cancelled my professional development presentation for next week - need to re-prioritize and gain some momentum on this project before focusing on that for the moment. #Agile #MVP  |
 | 10/25/17 | Worked on REST activities, hashing out Git issues with team project. | 4 | Weekend was eaten up by AJAX class project and take home exam.  Thankfully Java EE was lighter this week. |
 | 10/27/17 | Created chore and house entities, updated time log. | 0.5 | Coding on the bus on the way to work is actually pretty great. |
-| 10/31/17 | Created chore and house DAOs, created chore and house DAO tests, updated time log. Working on week 10 multithreading exercise... | 4.5 | More bus coding. Did not realize there was an assignment for this week! |
+| 10/31/17 | Created chore and house DAOs, created chore and house DAO tests, updated time log. Working on week 10 multithreading exercise.  Did peer reviews for Aaron and Mack. | 6.5 | More bus coding. Did not realize there was an assignment for this week! |
  
  
 
