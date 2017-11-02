@@ -25,6 +25,9 @@
         <mapping class="edu.matc.entity.User"/>
         <mapping class="edu.matc.entity.House"/>
         <mapping class="edu.matc.entity.Chore"/>
+        <mapping class="edu.matc.entity.UserRole"/>
+
+
 
 
 

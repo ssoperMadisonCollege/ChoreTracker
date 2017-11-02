@@ -25,6 +25,9 @@
 | 10/25/17 | Worked on REST activities, hashing out Git issues with team project. | 4 | Weekend was eaten up by AJAX class project and take home exam.  Thankfully Java EE was lighter this week. |
 | 10/27/17 | Created chore and house entities, updated time log. | 0.5 | Coding on the bus on the way to work is actually pretty great. |
 | 10/31/17 | Created chore and house DAOs, created chore and house DAO tests, updated time log. Working on week 10 multithreading exercise.  Did peer reviews for Aaron and Mack. | 6.5 | More bus coding. Did not realize there was an assignment for this week! |
+| 11/1/17 |  Plinking away at the multi-threading exercise, figuring out how to make my test database more robust | 2.5 | Got the multi-threading exercises working with a pointer from Jake "The Threadmaster/The Man" Stoffregen. Must run the program via a main method if you're closely following the Barber shop example. |
+| 11/2/17 |  Moving JSPs into their own directory for organization.  Adding UserRole entity and Dao/tests. | .75 | Bus coding on the way to work. |
+
  
  
 
