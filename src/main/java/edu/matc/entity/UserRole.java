@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 
 /**
@@ -16,7 +17,11 @@ import java.io.Serializable;
 @Table(name = "user_roles")
 public class UserRole {
 
-    // TODO need to add an ID column to the user_roles table
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name="increment", strategy="increment")
+    @Column(name="user_role_id")
+    private int userRoleId;
     @Column(name="user_name")
     private String userRoleName;
     @Column(name = "role_name")
@@ -32,8 +37,17 @@ public class UserRole {
      * Overloading the User constructor, passing in the database column values
      */
     public UserRole(String userRoleName, String roleName) {
+        this.userRoleId = userRoleId;
         this.userRoleName = userRoleName;
         this.roleName = roleName;
+    }
+
+    public int getUserRoleId() {
+        return userRoleId;
+    }
+
+    public void setUserRoleId(int userRoleId) {
+        this.userRoleId = userRoleId;
     }
 
     public String getUserRoleName() {
@@ -55,8 +69,24 @@ public class UserRole {
     @Override
     public String toString() {
         return "UserRole{" +
-                "userRoleName='" + userRoleName + '\'' +
+                "userRoleId=" + userRoleId +
+                ", userRoleName='" + userRoleName + '\'' +
                 ", roleName='" + roleName + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserRole userRole = (UserRole) o;
+        return userRoleId == userRole.userRoleId &&
+                Objects.equals(userRoleName, userRole.userRoleName) &&
+                Objects.equals(roleName, userRole.roleName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userRoleId, userRoleName, roleName);
     }
 }
