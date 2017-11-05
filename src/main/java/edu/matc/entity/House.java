@@ -3,8 +3,6 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * A class to represent a house.
@@ -16,12 +14,8 @@ import java.util.Objects;
 @Table(name = "houses")
 public class House {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name="increment", strategy="increment")
-    @Column(name="houseId")
+
     private int houseId;
-    @Column(name="house_name")
     private String houseName;
 
     /**
@@ -31,7 +25,6 @@ public class House {
     }
 
     /**
-     *
      * Overloading the House constructor, passing in the database column values
      */
     public House(
@@ -42,6 +35,10 @@ public class House {
         this.houseName = houseName;
     }
 
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name="increment", strategy="increment")
+    @Column(name="houseId")
     public int getHouseId() {
         return houseId;
     }
@@ -50,6 +47,8 @@ public class House {
         this.houseId = houseId;
     }
 
+    @Basic
+    @Column(name="house_name")
     public String getHouseName() {
         return houseName;
     }

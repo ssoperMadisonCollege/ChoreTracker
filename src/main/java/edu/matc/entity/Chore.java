@@ -15,18 +15,10 @@ import java.time.LocalDate;
 @Table(name = "chores")
 public class Chore {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name="increment", strategy="increment")
-    @Column(name="choreId")
     private int choreId;
-    @Column(name="chore_name")
     private String choreName;
-    @Column(name="chore_start_date")
     private LocalDate choreDate;
-    @Column(name="chore_time_interval")
     private String choreInterval;
-    @Column(name="assigned_to_user")
     private String assignedToUser;
 
     /**
@@ -52,6 +44,10 @@ public class Chore {
         this.assignedToUser = assignedToUser;
     }
 
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name="increment", strategy="increment")
+    @Column(name="choreId")
     public int getChoreId() {
         return choreId;
     }
@@ -60,6 +56,8 @@ public class Chore {
         this.choreId = choreId;
     }
 
+    @Basic
+    @Column(name="chore_name")
     public String getChoreName() {
         return choreName;
     }
@@ -68,7 +66,9 @@ public class Chore {
         this.choreName = choreName;
     }
 
+    @Basic
     @Convert(converter = LocalDateAttributeConverter.class)
+    @Column(name="chore_start_date")
     public LocalDate getChoreDate() {
         return choreDate;
     }
@@ -77,6 +77,8 @@ public class Chore {
         this.choreDate = choreDate;
     }
 
+    @Basic
+    @Column(name="chore_time_interval")
     public String getChoreInterval() {
         return choreInterval;
     }
@@ -85,6 +87,8 @@ public class Chore {
         this.choreInterval = choreInterval;
     }
 
+    @Basic
+    @Column(name="assigned_to_user")
     public String getAssignedToUser() {
         return assignedToUser;
     }

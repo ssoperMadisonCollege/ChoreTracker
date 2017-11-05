@@ -5,8 +5,6 @@ import javafx.util.converter.LocalDateStringConverter;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -46,7 +44,6 @@ public class ChoreDaoTest {
     @Test
     public void deleteChoreTest() throws Exception {
 
-        // TODO Should probably add a temporary chore before deleting so I can run this more than once
         Chore chore = dao.getChore(5);
         assertTrue(chore != null);
         dao.deleteChore(5);
@@ -60,7 +57,7 @@ public class ChoreDaoTest {
         // Expected
         expected.setChoreId(5);
         expected.setChoreName("fix leaky garage door");
-        expected.setChoreDate(dateConverter.fromString("2017-10-21"));
+        expected.setChoreDate(dateConverter.fromString("10/21/2017"));
 
         // Actual
         int newChore = dao.addChore(expected);

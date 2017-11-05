@@ -3,9 +3,6 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Objects;
-
 
 /**
  * A class to represent a user.
@@ -17,14 +14,8 @@ import java.util.Objects;
 @Table(name = "user_roles")
 public class UserRole {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name="increment", strategy="increment")
-    @Column(name="user_role_id")
     private int userRoleId;
-    @Column(name="user_name")
     private String userRoleName;
-    @Column(name = "role_name")
     private String roleName;
 
     /**
@@ -42,6 +33,10 @@ public class UserRole {
         this.roleName = roleName;
     }
 
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name="increment", strategy="increment")
+    @Column(name="user_role_id")
     public int getUserRoleId() {
         return userRoleId;
     }
@@ -50,6 +45,8 @@ public class UserRole {
         this.userRoleId = userRoleId;
     }
 
+    @Basic
+    @Column(name="user_name")
     public String getUserRoleName() {
         return userRoleName;
     }
@@ -58,6 +55,8 @@ public class UserRole {
         this.userRoleName = userRoleName;
     }
 
+    @Basic
+    @Column(name = "role_name")
     public String getRoleName() {
         return roleName;
     }

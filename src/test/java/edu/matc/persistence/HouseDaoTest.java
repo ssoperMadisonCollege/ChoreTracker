@@ -43,7 +43,6 @@ public class HouseDaoTest {
     @Test
     public void deleteHouseTest() throws Exception {
 
-        // TODO Should probably add a temporary house before deleting so I can run this more than once
         House house = dao.getHouse(5);
         assertTrue(house != null);
         dao.deleteHouse(5);

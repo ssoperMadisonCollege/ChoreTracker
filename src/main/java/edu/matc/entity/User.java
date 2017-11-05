@@ -17,22 +17,12 @@ import java.util.Objects;
 @Table(name = "users")
 public class User {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name="increment", strategy="increment")
-    @Column(name="userId")
     private int userId;
-    @Column(name = "first_name")
     private String firstName;
-    @Column(name = "last_name")
     private String lastName;
-    @Column(name = "user_password")
     private String password;
-    @Column(name = "user_email")
     private String email;
-    @Column(name = "user_phone")
     private String phone;
-    @Column(name = "user_name")
     private String userName;
 
     /**
@@ -42,7 +32,6 @@ public class User {
     }
 
     /**
-     *
      * Overloading the User constructor, passing in the database column values
      */
     public User(int userId,
@@ -60,6 +49,10 @@ public class User {
         this.userName = userName;
     }
 
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name="increment", strategy="increment")
+    @Column(name="userId")
     public int getUserId() {
         return userId;
     }
@@ -68,6 +61,8 @@ public class User {
         this.userId = userId;
     }
 
+    @Basic
+    @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
@@ -76,6 +71,8 @@ public class User {
         this.firstName = firstName;
     }
 
+    @Basic
+    @Column(name = "last_name")
     public String getLastName() {
         return lastName;
     }
@@ -84,6 +81,8 @@ public class User {
         this.lastName = lastName;
     }
 
+    @Basic
+    @Column(name = "user_password")
     public String getPassword() {
         return password;
     }
@@ -92,6 +91,8 @@ public class User {
         this.password = password;
     }
 
+    @Basic
+    @Column(name = "user_email")
     public String getEmail() {
         return email;
     }
@@ -100,6 +101,8 @@ public class User {
         this.email = email;
     }
 
+    @Basic
+    @Column(name = "user_phone")
     public String getPhone() {
         return phone;
     }
@@ -108,6 +111,8 @@ public class User {
         this.phone = phone;
     }
 
+    @Basic
+    @Column(name = "user_name")
     public String getUserName() {
         return userName;
     }

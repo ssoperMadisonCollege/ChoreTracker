@@ -43,11 +43,10 @@ public class UserRoleDaoTest {
     @Test
     public void deleteUserRoleTest() throws Exception {
 
-        // TODO Should probably add a temporary userRole before deleting so I can run this more than once
-        UserRole userRole = dao.getUserRole(6);
+        UserRole userRole = dao.getUserRole(1);
         assertTrue(userRole != null);
-        dao.deleteUserRole(6);
-        userRole = dao.getUserRole(6);
+        dao.deleteUserRole(1);
+        userRole = dao.getUserRole(1);
         assertTrue(userRole == null);
     }
 
@@ -67,13 +66,13 @@ public class UserRoleDaoTest {
 
     @Test
     public void updateUserRoleTest() throws Exception {
-        UserRole userRole = dao.getUserRole(2);
+        UserRole userRole = dao.getUserRole(1);
         assertTrue(userRole != null);
         userRole.setUserRoleName("Foo_bar");
         dao.updateUserRole(userRole);
-        userRole = dao.getUserRole(2);
+        userRole = dao.getUserRole(1);
         assertTrue(userRole != null);
-        assertEquals("The usre role name wasn't successfully updated.", "Foo_bar", userRole.getUserRoleName());
+        assertEquals("The user role name wasn't successfully updated.", "Foo_bar", userRole.getUserRoleName());
     }
 
     //TODO use .equals() on each entity for easy testing - insert a userRole to the db and read it back
