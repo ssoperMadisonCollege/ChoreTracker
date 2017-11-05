@@ -3,6 +3,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * A class to represent a house.
@@ -12,7 +13,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "houses")
-public class House {
+public class House implements Serializable {
 
 
     private int houseId;
@@ -68,7 +69,7 @@ public class House {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof House)) return false;
 
         House house = (House) o;
 

@@ -3,6 +3,8 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import edu.matc.util.LocalDateAttributeConverter;
+
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -13,7 +15,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "chores")
-public class Chore {
+public class Chore implements Serializable {
 
     private int choreId;
     private String choreName;
@@ -111,7 +113,7 @@ public class Chore {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Chore)) return false;
 
         Chore chore = (Chore) o;
 

@@ -3,6 +3,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * A class to represent a user.
@@ -12,7 +13,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user_roles")
-public class UserRole {
+public class UserRole implements Serializable {
 
     private int userRoleId;
     private String userRoleName;
@@ -77,7 +78,7 @@ public class UserRole {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof UserRole)) return false;
 
         UserRole userRole = (UserRole) o;
 
