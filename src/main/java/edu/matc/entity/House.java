@@ -70,13 +70,17 @@ public class House {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         House house = (House) o;
-        return houseId == house.houseId &&
-                Objects.equals(houseName, house.houseName);
+
+        if (houseId != house.houseId) return false;
+        return houseName != null ? houseName.equals(house.houseName) : house.houseName == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(houseId, houseName);
+        int result = houseId;
+        result = 31 * result + (houseName != null ? houseName.hashCode() : 0);
+        return result;
     }
 }

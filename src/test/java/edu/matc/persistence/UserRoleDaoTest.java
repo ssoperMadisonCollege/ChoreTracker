@@ -1,7 +1,6 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.UserRole;
-import edu.matc.persistence.UserRoleDao;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,20 +41,6 @@ public class UserRoleDaoTest {
     }
 
     @Test
-    public void addUserRoleTest() throws Exception {
-        UserRole userRole = new UserRole();
-        userRole.setUserRoleId(2);
-        userRole.setUserRoleName("testUserRoleName");
-        userRole.setRoleName("testRolenName");
-
-        int newIdForNewUserRole = dao.addUserRole(userRole);
-        UserRole actualUserRole = dao.getUserRole(newIdForNewUserRole);
-        assertNotNull("New test userRole not inserted.", actualUserRole);
-        assertEquals("New test userRole wasn't added in the right spot", "testUserRoleName",actualUserRole.getUserRoleName());
-        assertEquals("Number of rows didn't increase.", numberOfUserRolesInDatabase + 1, dao.getAllUserRoles().size());
-    }
-
-    @Test
     public void deleteUserRoleTest() throws Exception {
 
         // TODO Should probably add a temporary userRole before deleting so I can run this more than once
@@ -64,6 +49,20 @@ public class UserRoleDaoTest {
         dao.deleteUserRole(6);
         userRole = dao.getUserRole(6);
         assertTrue(userRole == null);
+    }
+
+    @Test
+    public void addUserRoleTest() throws Exception {
+        UserRole userRole = new UserRole();
+        userRole.setUserRoleId(2);
+        userRole.setUserRoleName("testUserRoleName");
+        userRole.setRoleName("testRoleName");
+
+        int newUserRole = dao.addUserRole(userRole);
+        UserRole actualUserRole = dao.getUserRole(newUserRole);
+        assertNotNull("New test userRole not inserted.", actualUserRole);
+        assertEquals("New test userRole wasn't added in the right spot", "testUserRoleName",actualUserRole.getUserRoleName());
+        assertEquals("Number of rows didn't increase.", numberOfUserRolesInDatabase + 1, dao.getAllUserRoles().size());
     }
 
     @Test

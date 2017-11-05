@@ -1,7 +1,6 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.House;
-import edu.matc.persistence.HouseDao;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,6 +41,17 @@ public class HouseDaoTest {
     }
 
     @Test
+    public void deleteHouseTest() throws Exception {
+
+        // TODO Should probably add a temporary house before deleting so I can run this more than once
+        House house = dao.getHouse(5);
+        assertTrue(house != null);
+        dao.deleteHouse(5);
+        house = dao.getHouse(5);
+        assertTrue(house == null);
+    }
+
+    @Test
     public void addHouseTest() throws Exception {
         House house = new House();
         house.setHouseId(45);
@@ -52,17 +62,6 @@ public class HouseDaoTest {
         assertNotNull("New test house not inserted.", actualHouse);
         assertEquals("New test house wasn't added in the right spot", "testHouse",actualHouse.getHouseName());
         assertEquals("Number of rows didn't increase.", numberOfHousesInDatabase + 1, dao.getAllHouses().size());
-    }
-
-    @Test
-    public void deleteHouseTest() throws Exception {
-
-        // TODO Should probably add a temporary house before deleting so I can run this more than once
-        House house = dao.getHouse(45);
-        assertTrue(house != null);
-        dao.deleteHouse(45);
-        house = dao.getHouse(45);
-        assertTrue(house == null);
     }
 
     @Test

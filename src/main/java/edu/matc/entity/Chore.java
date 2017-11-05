@@ -1,11 +1,9 @@
 package edu.matc.entity;
 
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
-import java.io.Serializable;
+import edu.matc.util.LocalDateAttributeConverter;
 import java.time.LocalDate;
-import java.util.Objects;
 
 /**
  * A class to represent a chore.
@@ -22,7 +20,7 @@ public class Chore {
     @GenericGenerator(name="increment", strategy="increment")
     @Column(name="choreId")
     private int choreId;
-    @Column(name="chore_nme")
+    @Column(name="chore_name")
     private String choreName;
     @Column(name="chore_start_date")
     private LocalDate choreDate;
@@ -38,7 +36,6 @@ public class Chore {
     }
 
     /**
-     *
      * Overloading the Chore constructor, passing in the database column values
      */
     public Chore(
@@ -71,6 +68,7 @@ public class Chore {
         this.choreName = choreName;
     }
 
+    @Convert(converter = LocalDateAttributeConverter.class)
     public LocalDate getChoreDate() {
         return choreDate;
     }
@@ -110,16 +108,24 @@ public class Chore {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Chore chore = (Chore) o;
-        return choreId == chore.choreId &&
-                Objects.equals(choreName, chore.choreName) &&
-                Objects.equals(choreDate, chore.choreDate) &&
-                Objects.equals(choreInterval, chore.choreInterval) &&
-                Objects.equals(assignedToUser, chore.assignedToUser);
+
+        if (choreId != chore.choreId) return false;
+        if (choreName != null ? !choreName.equals(chore.choreName) : chore.choreName != null) return false;
+        if (choreDate != null ? !choreDate.equals(chore.choreDate) : chore.choreDate != null) return false;
+        if (choreInterval != null ? !choreInterval.equals(chore.choreInterval) : chore.choreInterval != null)
+            return false;
+        return assignedToUser != null ? assignedToUser.equals(chore.assignedToUser) : chore.assignedToUser == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(choreId, choreName, choreDate, choreInterval, assignedToUser);
+        int result = choreId;
+        result = 31 * result + (choreName != null ? choreName.hashCode() : 0);
+        result = 31 * result + (choreDate != null ? choreDate.hashCode() : 0);
+        result = 31 * result + (choreInterval != null ? choreInterval.hashCode() : 0);
+        result = 31 * result + (assignedToUser != null ? assignedToUser.hashCode() : 0);
+        return result;
     }
 }

@@ -1,11 +1,12 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.Chore;
-import edu.matc.persistence.ChoreDao;
+import javafx.util.converter.LocalDateStringConverter;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -21,6 +22,7 @@ public class ChoreDaoTest {
     int numberOfChoresInDatabase;
 
     private final Logger log = Logger.getLogger(this.getClass());
+    private LocalDateStringConverter dateConverter = new LocalDateStringConverter();
 
     @Before
     public void setup() {
@@ -42,36 +44,40 @@ public class ChoreDaoTest {
     }
 
     @Test
-    public void addChoreTest() throws Exception {
-        Chore chore = new Chore();
-        chore.setChoreId(45);
-        chore.setChoreName("testChore");
-
-        int newIdForNewChore = dao.addChore(chore);
-        Chore actualChore = dao.getChore(newIdForNewChore);
-        assertNotNull("New test chore not inserted.", actualChore);
-        assertEquals("New test chore wasn't added in the right spot", "testChore",actualChore.getChoreName());
-        assertEquals("Number of rows didn't increase.", numberOfChoresInDatabase + 1, dao.getAllChores().size());
-    }
-
-    @Test
     public void deleteChoreTest() throws Exception {
 
         // TODO Should probably add a temporary chore before deleting so I can run this more than once
-        Chore chore = dao.getChore(45);
+        Chore chore = dao.getChore(5);
         assertTrue(chore != null);
-        dao.deleteChore(45);
-        chore = dao.getChore(45);
+        dao.deleteChore(5);
+        chore = dao.getChore(5);
         assertTrue(chore == null);
     }
 
     @Test
+    public void addChoreTest() throws Exception {
+        Chore expected = new Chore();
+        // Expected
+        expected.setChoreId(5);
+        expected.setChoreName("fix leaky garage door");
+        expected.setChoreDate(dateConverter.fromString("2017-10-21"));
+
+        // Actual
+        int newChore = dao.addChore(expected);
+        Chore actualChore = dao.getChore(newChore);
+        
+        assertNotNull("New test chore not inserted.", actualChore);
+        assertEquals("New test chore wasn't added in the right spot", "fix leaky garage door",actualChore.getChoreName());
+        assertEquals("Number of rows didn't increase.", numberOfChoresInDatabase + 1, dao.getAllChores().size());
+    }
+
+    @Test
     public void updateChoreTest() throws Exception {
-        Chore chore = dao.getChore(4);
+        Chore chore = dao.getChore(5);
         assertTrue(chore != null);
         chore.setChoreName("anotherTestChore");
         dao.updateChore(chore);
-        chore = dao.getChore(4);
+        chore = dao.getChore(5);
         assertTrue(chore != null);
         assertEquals("The chore name wasn't successfully updated.", "anotherTestChore", chore.getChoreName());
     }

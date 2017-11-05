@@ -1,7 +1,6 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.User;
-import edu.matc.persistence.UserDao;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,6 +41,17 @@ public class UserDaoTest {
     }
 
     @Test
+    public void deleteUserTest() throws Exception {
+
+        // TODO Should probably add a temporary user before deleting so I can run this more than once
+        User user = dao.getUser(6);
+        assertTrue(user != null);
+        dao.deleteUser(6);
+        user = dao.getUser(6);
+        assertTrue(user == null);
+    }
+
+    @Test
     public void addUserTest() throws Exception {
         User user = new User();
         user.setUserId(26);
@@ -57,17 +67,6 @@ public class UserDaoTest {
         assertNotNull("New test user not inserted.", actualUser);
         assertEquals("New test user wasn't added in the right spot", "Soper",actualUser.getLastName());
         assertEquals("Number of rows didn't increase.", numberOfUsersInDatabase + 1, dao.getAllUsers().size());
-    }
-
-    @Test
-    public void deleteUserTest() throws Exception {
-
-        // TODO Should probably add a temporary user before deleting so I can run this more than once
-        User user = dao.getUser(6);
-        assertTrue(user != null);
-        dao.deleteUser(6);
-        user = dao.getUser(6);
-        assertTrue(user == null);
     }
 
     @Test
