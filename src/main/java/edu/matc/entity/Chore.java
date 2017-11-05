@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * A class to represent a chore.
@@ -103,5 +104,22 @@ public class Chore {
                 ", choreInterval='" + choreInterval + '\'' +
                 ", assignedToUser='" + assignedToUser + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Chore chore = (Chore) o;
+        return choreId == chore.choreId &&
+                Objects.equals(choreName, chore.choreName) &&
+                Objects.equals(choreDate, chore.choreDate) &&
+                Objects.equals(choreInterval, chore.choreInterval) &&
+                Objects.equals(assignedToUser, chore.assignedToUser);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(choreId, choreName, choreDate, choreInterval, assignedToUser);
     }
 }

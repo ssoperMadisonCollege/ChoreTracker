@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * A class to represent a house.
@@ -63,5 +64,19 @@ public class House {
                 "houseId=" + houseId +
                 ", houseName='" + houseName + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        House house = (House) o;
+        return houseId == house.houseId &&
+                Objects.equals(houseName, house.houseName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(houseId, houseName);
     }
 }

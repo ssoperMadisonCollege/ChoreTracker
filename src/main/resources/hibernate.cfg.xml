@@ -27,10 +27,6 @@
         <mapping class="edu.matc.entity.Chore"/>
         <mapping class="edu.matc.entity.UserRole"/>
 
-
-
-
-
     </session-factory>
 
 </hibernate-configuration>
