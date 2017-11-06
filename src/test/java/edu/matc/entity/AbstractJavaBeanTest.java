@@ -10,13 +10,17 @@ import org.junit.Test;
 import org.meanbean.lang.Factory;
 import org.meanbean.test.BeanTester;
 
+/**
+ * This abstract class tests all project entities, which are all java beans.
+ * @param <MyBean>
+ */
 public abstract class AbstractJavaBeanTest<MyBean> {
 
     @Test
     public void beanIsSerializable() throws Exception {
         final MyBean myBean = getBeanInstance();
         final byte[] serializedMyBean = SerializationUtils.serialize((Serializable) myBean);
-        @SuppressWarnings("unchecked")
+        //@SuppressWarnings("unchecked")
         final MyBean deserializedMyBean = (MyBean) SerializationUtils.deserialize(serializedMyBean);
         assertEquals(myBean, deserializedMyBean);
     }
