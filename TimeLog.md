@@ -28,7 +28,7 @@
 | 11/1/17 |  Plinking away at the multi-threading exercise, figuring out how to make my test database more robust | 2.5 | Got the multi-threading exercises working with a pointer from Jake "The Threadmaster/The Man" Stoffregen. Must run the program via a main method if you're closely following the Barber shop example. |
 | 11/2/17 |  Moving JSPs into their own directory for organization.  Adding UserRole entity and Dao/tests. | .75 | Bus coding on the way to work. |
 | 11/3/17 |  Tinkered with UserRole tests, stuff is slightly broken. | .5 |  |
-| 11/5/17 |  Got tests running in a repeatable fashion with lots of hibernate tweaks.  Implemented testing for javabeans to increase code coverage. Could use some cleanup. | 6.5 | I learned a cool, concise way of testing javabeans today, link here: https://www.jdev.it/tips-unit-testing-javabeans/ |
+| 11/5/17 |  Got tests running in a repeatable fashion with lots of hibernate tweaks.  Implemented testing for javabeans to increase code coverage. Could use some cleanup. Tinkered with auth config files that I broke. | 8 | I learned a cool, concise way of testing javabeans today, link here: https://www.jdev.it/tips-unit-testing-javabeans/ |
 
 
  
