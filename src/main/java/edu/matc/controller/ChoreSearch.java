@@ -34,7 +34,7 @@ public class ChoreSearch extends HttpServlet {
         log.error(chores.toString());
         req.setAttribute("chores", chores);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/choreResults.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/JSP/choreResults.jsp");
         dispatcher.forward(req, resp);
     }
 }

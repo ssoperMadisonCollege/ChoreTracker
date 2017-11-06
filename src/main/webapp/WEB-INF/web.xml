@@ -21,8 +21,41 @@
 
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>ChoreTracker</web-resource-name>
+      <web-resource-name>userSearch</web-resource-name>
       <url-pattern>/userSearch</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <!-- <role-name>registered-user</role-name> -->
+      <role-name>administrator</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>choreSearch</web-resource-name>
+      <url-pattern>/choreSearch</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <!-- <role-name>registered-user</role-name> -->
+      <role-name>administrator</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>houseSearch</web-resource-name>
+      <url-pattern>/houseSearch</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <!-- <role-name>registered-user</role-name> -->
+      <role-name>administrator</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>userRoleSearch</web-resource-name>
+      <url-pattern>/userRoleSearch</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <!-- <role-name>registered-user</role-name> -->

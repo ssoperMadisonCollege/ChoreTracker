@@ -34,7 +34,7 @@ public class HouseSearch extends HttpServlet {
         log.error(houses.toString());
         req.setAttribute("houses", houses);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/houseResults.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/JSP/houseResults.jsp");
         dispatcher.forward(req, resp);
     }
 }

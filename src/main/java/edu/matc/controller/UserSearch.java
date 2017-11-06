@@ -34,7 +34,7 @@ public class UserSearch extends HttpServlet {
         log.error(users.toString());
         req.setAttribute("users", users);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/userResults.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/JSP/userResults.jsp");
         dispatcher.forward(req, resp);
     }
 }
