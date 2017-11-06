@@ -66,11 +66,11 @@ public class UserRoleDaoTest {
 
     @Test
     public void updateUserRoleTest() throws Exception {
-        UserRole userRole = dao.getUserRole(1);
+        UserRole userRole = dao.getUserRole(2);
         assertTrue(userRole != null);
         userRole.setUserRoleName("Foo_bar");
         dao.updateUserRole(userRole);
-        userRole = dao.getUserRole(1);
+        userRole = dao.getUserRole(2);
         assertTrue(userRole != null);
         assertEquals("The user role name wasn't successfully updated.", "Foo_bar", userRole.getUserRoleName());
     }

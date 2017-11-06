@@ -14,12 +14,17 @@
         <property name="connection.username">root</property>
         <property name="connection.password">student</property>
 
-        <!-- TODO drop and create auto ddl for easy test table creation -->
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
+
+        <!-- instruction to rebuild the database after each test -->
+        <!-- <property name="hbm2ddl.auto">create-drop</property> -->
+
+        <!-- instruction to read multiple lines from import.sql file -->
+        <property name="hibernate.hbm2ddl.import_files_sql_extractor">org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor</property>
 
         <!-- List the annotated entity class/es -->
         <mapping class="edu.matc.entity.User"/>

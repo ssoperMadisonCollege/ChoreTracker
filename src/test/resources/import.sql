@@ -34,6 +34,7 @@ CREATE TABLE `user_roles` (
 
 LOCK TABLES `user_roles` WRITE;
 INSERT INTO `user_roles` VALUES (1,'admin','administrator');
+INSERT INTO `user_roles` VALUES (2,'testUser','testRole');
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
