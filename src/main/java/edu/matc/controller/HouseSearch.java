@@ -31,7 +31,7 @@ public class HouseSearch extends HttpServlet {
 
         HouseDao HouseDao = new HouseDao();
         List<House> houses = HouseDao.getAllHouses();
-        log.error(houses.toString());
+        log.error("Houses list: " + houses.toString());
         req.setAttribute("houses", houses);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/JSP/houseResults.jsp");

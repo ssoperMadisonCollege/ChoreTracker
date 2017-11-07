@@ -31,7 +31,7 @@ public class UserRoleSearch extends HttpServlet {
 
         UserRoleDao UserRoleDao = new UserRoleDao();
         List<UserRole> userRoles = UserRoleDao.getAllUserRoles();
-        log.error(userRoles.toString());
+        log.error("UserRoles list: " + userRoles.toString());
         req.setAttribute("userRoles", userRoles);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/JSP/userRoleResults.jsp");

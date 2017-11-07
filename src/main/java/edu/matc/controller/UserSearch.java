@@ -31,7 +31,7 @@ public class UserSearch extends HttpServlet {
 
         UserDao UserDao = new UserDao();
         List<User> users = UserDao.getAllUsers();
-        log.error(users.toString());
+        log.error("Users lists: " + users.toString());
         req.setAttribute("users", users);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/JSP/userResults.jsp");

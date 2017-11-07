@@ -11,7 +11,7 @@
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>ChoreTracker</web-resource-name>
-      <url-pattern>JSP/edit.jsp</url-pattern>
+      <url-pattern>/edit.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <!-- <role-name>registered-user</role-name> -->

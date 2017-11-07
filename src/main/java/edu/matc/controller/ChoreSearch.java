@@ -31,7 +31,7 @@ public class ChoreSearch extends HttpServlet {
 
         ChoreDao ChoreDao = new ChoreDao();
         List<Chore> chores = ChoreDao.getAllChores();
-        log.error(chores.toString());
+        log.error("Chores list: " + chores.toString());
         req.setAttribute("chores", chores);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/JSP/choreResults.jsp");
