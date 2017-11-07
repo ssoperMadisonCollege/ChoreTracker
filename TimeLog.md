@@ -29,6 +29,7 @@
 | 11/2/17 |  Moving JSPs into their own directory for organization.  Adding UserRole entity and Dao/tests. | .75 | Bus coding on the way to work. |
 | 11/3/17 |  Tinkered with UserRole tests, stuff is slightly broken. | .5 |  |
 | 11/5/17 |  Got tests running in a repeatable fashion with lots of hibernate tweaks.  Implemented testing for javabeans to increase code coverage. Could use some cleanup. Tinkered with auth config files that I broke. | 8 | I learned a cool, concise way of testing javabeans today, link here: https://www.jdev.it/tips-unit-testing-javabeans/ |
+| 11/6/17 |  Trying to figure out why auth isn't working. | 2 |  |
 
 
  
