@@ -32,6 +32,7 @@
 | 11/6/17 | Trying to figure out why auth isn't working. | 2 |  |
 | 11/6/17 | Trying to figure out why auth isn't working. | 2 | Wasn't an auth issue, was a web.xml issue.  When in doubt - look to the logs. |
 | 11/7/17 | Working on cleaning up some code, adding logging and comments here and there. | .5 | Bus coding... |
+| 11/13/17 | Added javadoc to team project and individual project using JavaDoc plugin.  Fixed a typo in the entity declaration in hibernate config file in team project. | 2 | Found a cool code coverage tool (JaCoco?) that seems like a pretty comprehensive but lightweight solution to determine testing coverage.  I might use it in my indie project.  Spent a lot of time working on AJAX project over the weekend, but that class is nearly done now so constraints on time should be minimal for the rest of the semester. |
 
 
 
