@@ -10,13 +10,16 @@ import java.util.List;
 
 
 /**
+ * The Chore dao.
+ *
  * @author ssoper 10/31/2017.
  */
 public class ChoreDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
-    /** Return a list of all chores
+    /**
+     * Return a list of all chores
      *
      * @return All chores
      */
@@ -40,7 +43,7 @@ public class ChoreDao {
      * READ step in CRUD (CREATE READ UPDATE DELETE)
      *
      * @param id the chore's id
-     * @return chore
+     * @return chore chore
      */
     public Chore getChore(int id) {
         Chore chore = null;
@@ -67,7 +70,7 @@ public class ChoreDao {
      *
      * CREATE step in CRUD (CREATE READ UPDATE DELETE)
      *
-     * @param chore
+     * @param chore the chore
      * @return the choreId of the inserted record
      */
     public int addChore(Chore chore) {
@@ -121,7 +124,7 @@ public class ChoreDao {
      *
      * UPDATE step in CRUD (CREATE READ UPDATE DELETE)
      *
-     * @param chore
+     * @param chore the chore
      */
     public void updateChore(Chore chore) {
         Session databaseSession = null;

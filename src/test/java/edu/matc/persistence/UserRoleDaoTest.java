@@ -10,6 +10,8 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
+ * The UserRole dao test.
+ *
  * Created on 10/3/17.
  *
  * @author ssoper
@@ -27,12 +29,22 @@ public class UserRoleDaoTest {
         numberOfUserRolesInDatabase = dao.getAllUserRoles().size();
     }
 
+    /**
+     * Get all user roles test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getAllUserRolesTest() throws Exception {
         List<UserRole> userRoles = dao.getAllUserRoles();
         assertTrue(userRoles.size() > 0);
     }
 
+    /**
+     * Get user role test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getUserRoleTest() throws Exception {
         UserRole userRole = dao.getUserRole(1);
@@ -40,6 +52,11 @@ public class UserRoleDaoTest {
         assertEquals("admin was not returned", "admin", userRole.getUserRoleName());
     }
 
+    /**
+     * Delete user role test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void deleteUserRoleTest() throws Exception {
 
@@ -50,6 +67,11 @@ public class UserRoleDaoTest {
         assertTrue(userRole == null);
     }
 
+    /**
+     * Add user role test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void addUserRoleTest() throws Exception {
         UserRole userRole = new UserRole();
@@ -64,6 +86,11 @@ public class UserRoleDaoTest {
         assertEquals("Number of rows didn't increase.", numberOfUserRolesInDatabase + 1, dao.getAllUserRoles().size());
     }
 
+    /**
+     * Update user role test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void updateUserRoleTest() throws Exception {
         UserRole userRole = dao.getUserRole(2);

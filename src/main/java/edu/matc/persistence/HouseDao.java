@@ -10,13 +10,16 @@ import java.util.List;
 
 
 /**
+ * The House dao.
+ *
  * @author ssoper 10/31/2017.
  */
 public class HouseDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
-    /** Return a list of all houses
+    /**
+     * Return a list of all houses
      *
      * @return All houses
      */
@@ -67,7 +70,7 @@ public class HouseDao {
      *
      * CREATE step in CRUD (CREATE READ UPDATE DELETE)
      *
-     * @param house
+     * @param house the house
      * @return the houseId of the inserted record
      */
     public int addHouse(House house) {
@@ -121,7 +124,7 @@ public class HouseDao {
      *
      * UPDATE step in CRUD (CREATE READ UPDATE DELETE)
      *
-     * @param house
+     * @param house the house
      */
     public void updateHouse(House house) {
         Session databaseSession = null;

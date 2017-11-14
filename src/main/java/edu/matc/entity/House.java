@@ -10,7 +10,6 @@ import java.io.Serializable;
  *
  * @author ssoper 10/27/2017
  */
-
 @Entity
 @Table(name = "houses")
 public class House implements Serializable {
@@ -27,6 +26,9 @@ public class House implements Serializable {
 
     /**
      * Overloading the House constructor, passing in the database column values
+     *
+     * @param houseId   the house id
+     * @param houseName the house name
      */
     public House(
             int houseId,
@@ -36,6 +38,11 @@ public class House implements Serializable {
         this.houseName = houseName;
     }
 
+    /**
+     * Gets house id.
+     *
+     * @return the house id
+     */
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name="increment", strategy="increment")
@@ -44,16 +51,31 @@ public class House implements Serializable {
         return houseId;
     }
 
+    /**
+     * Sets house id.
+     *
+     * @param houseId the house id
+     */
     public void setHouseId(int houseId) {
         this.houseId = houseId;
     }
 
+    /**
+     * Gets house name.
+     *
+     * @return the house name
+     */
     @Basic
     @Column(name="house_name")
     public String getHouseName() {
         return houseName;
     }
 
+    /**
+     * Sets house name.
+     *
+     * @param houseName the house name
+     */
     public void setHouseName(String houseName) {
         this.houseName = houseName;
     }

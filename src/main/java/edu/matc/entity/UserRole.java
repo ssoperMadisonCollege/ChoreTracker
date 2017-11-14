@@ -10,7 +10,6 @@ import java.io.Serializable;
  *
  * @author ssoper 10/3/2017
  */
-
 @Entity
 @Table(name = "user_roles")
 public class UserRole implements Serializable {
@@ -27,6 +26,9 @@ public class UserRole implements Serializable {
 
     /**
      * Overloading the User constructor, passing in the database column values
+     *
+     * @param userRoleName the user role name
+     * @param roleName     the role name
      */
     public UserRole(String userRoleName, String roleName) {
         this.userRoleId = userRoleId;
@@ -34,6 +36,11 @@ public class UserRole implements Serializable {
         this.roleName = roleName;
     }
 
+    /**
+     * Gets user role id.
+     *
+     * @return the user role id
+     */
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name="increment", strategy="increment")
@@ -42,26 +49,51 @@ public class UserRole implements Serializable {
         return userRoleId;
     }
 
+    /**
+     * Sets user role id.
+     *
+     * @param userRoleId the user role id
+     */
     public void setUserRoleId(int userRoleId) {
         this.userRoleId = userRoleId;
     }
 
+    /**
+     * Gets user role name.
+     *
+     * @return the user role name
+     */
     @Basic
     @Column(name="user_name")
     public String getUserRoleName() {
         return userRoleName;
     }
 
+    /**
+     * Sets user role name.
+     *
+     * @param userRoleName the user role name
+     */
     public void setUserRoleName(String userRoleName) {
         this.userRoleName = userRoleName;
     }
 
+    /**
+     * Gets role name.
+     *
+     * @return the role name
+     */
     @Basic
     @Column(name = "role_name")
     public String getRoleName() {
         return roleName;
     }
 
+    /**
+     * Sets role name.
+     *
+     * @param roleName the role name
+     */
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }

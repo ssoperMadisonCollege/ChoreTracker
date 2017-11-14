@@ -12,7 +12,6 @@ import java.util.Objects;
  *
  * @author ssoper 10/3/2017
  */
-
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
@@ -33,6 +32,13 @@ public class User implements Serializable {
 
     /**
      * Overloading the User constructor, passing in the database column values
+     *
+     * @param userId    the user id
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param password  the password
+     * @param email     the email
+     * @param phone     the phone
      */
     public User(int userId,
                 String firstName,
@@ -49,6 +55,11 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
+    /**
+     * Gets user id.
+     *
+     * @return the user id
+     */
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name="increment", strategy="increment")
@@ -57,66 +68,131 @@ public class User implements Serializable {
         return userId;
     }
 
+    /**
+     * Sets user id.
+     *
+     * @param userId the user id
+     */
     public void setUserId(int userId) {
         this.userId = userId;
     }
 
+    /**
+     * Gets first name.
+     *
+     * @return the first name
+     */
     @Basic
     @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets first name.
+     *
+     * @param firstName the first name
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Gets last name.
+     *
+     * @return the last name
+     */
     @Basic
     @Column(name = "last_name")
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Sets last name.
+     *
+     * @param lastName the last name
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
     @Basic
     @Column(name = "user_password")
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
     @Basic
     @Column(name = "user_email")
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets email.
+     *
+     * @param email the email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Gets phone.
+     *
+     * @return the phone
+     */
     @Basic
     @Column(name = "user_phone")
     public String getPhone() {
         return phone;
     }
 
+    /**
+     * Sets phone.
+     *
+     * @param phone the phone
+     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
+    /**
+     * Gets user name.
+     *
+     * @return the user name
+     */
     @Basic
     @Column(name = "user_name")
     public String getUserName() {
         return userName;
     }
 
+    /**
+     * Sets user name.
+     *
+     * @param userName the user name
+     */
     public void setUserName(String userName) {
         this.userName = userName;
     }

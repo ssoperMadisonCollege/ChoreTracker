@@ -10,6 +10,8 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
+ * The House dao test.
+ *
  * Created on 10/31/17.
  *
  * @author ssoper
@@ -18,7 +20,6 @@ public class HouseDaoTest {
 
     HouseDao dao;
     int numberOfHousesInDatabase;
-
     private final Logger log = Logger.getLogger(this.getClass());
 
     @Before
@@ -27,12 +28,22 @@ public class HouseDaoTest {
         numberOfHousesInDatabase = dao.getAllHouses().size();
     }
 
+    /**
+     * Get all houses test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getAllHousesTest() throws Exception {
         List<House> houses = dao.getAllHouses();
         assertTrue(houses.size() > 0);
     }
 
+    /**
+     * Get house test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getHouseTest() throws Exception {
         House house = dao.getHouse(1);
@@ -40,6 +51,11 @@ public class HouseDaoTest {
         assertEquals("Soper House was not returned", "Soper House", house.getHouseName());
     }
 
+    /**
+     * Delete house test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void deleteHouseTest() throws Exception {
 
@@ -50,6 +66,11 @@ public class HouseDaoTest {
         assertTrue(house == null);
     }
 
+    /**
+     * Add house test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void addHouseTest() throws Exception {
         House house = new House();
@@ -63,6 +84,11 @@ public class HouseDaoTest {
         assertEquals("Number of rows didn't increase.", numberOfHousesInDatabase + 1, dao.getAllHouses().size());
     }
 
+    /**
+     * Update house test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void updateHouseTest() throws Exception {
         House house = dao.getHouse(4);

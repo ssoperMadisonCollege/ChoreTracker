@@ -10,13 +10,16 @@ import java.util.List;
 
 
 /**
+ * The User role dao.
+ *
  * @author ssoper 11/2/2017.
  */
 public class UserRoleDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
-    /** Return a list of all userRoles
+    /**
+     * Return a list of all userRoles
      *
      * @return All userRoles
      */
@@ -40,7 +43,7 @@ public class UserRoleDao {
      * READ step in CRUD (CREATE READ UPDATE DELETE)
      *
      * @param id the userRole's id
-     * @return userRole
+     * @return user role
      */
     public UserRole getUserRole(int id) {
         UserRole userRole = null;
@@ -67,7 +70,7 @@ public class UserRoleDao {
      *
      * CREATE step in CRUD (CREATE READ UPDATE DELETE)
      *
-     * @param userRole
+     * @param userRole the user role
      * @return the userRoleId of the inserted record
      */
     public int addUserRole(UserRole userRole) {
@@ -118,10 +121,10 @@ public class UserRoleDao {
 
     /**
      * Update the userRole
-     *
+     * 
      * UPDATE step in CRUD (CREATE READ UPDATE DELETE)
      *
-     * @param userRole
+     * @param userRole the user role
      */
     public void updateUserRole(UserRole userRole) {
         Session databaseSession = null;

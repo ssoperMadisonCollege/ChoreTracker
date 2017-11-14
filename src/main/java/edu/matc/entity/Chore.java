@@ -12,7 +12,6 @@ import java.time.LocalDate;
  *
  * @author ssoper 10/27/2017
  */
-
 @Entity
 @Table(name = "chores")
 public class Chore implements Serializable {
@@ -31,6 +30,12 @@ public class Chore implements Serializable {
 
     /**
      * Overloading the Chore constructor, passing in the database column values
+     *
+     * @param choreId        the chore id
+     * @param choreName      the chore name
+     * @param choreDate      the chore date
+     * @param choreInterval  the chore interval
+     * @param assignedToUser the assigned to user
      */
     public Chore(
             int choreId,
@@ -46,6 +51,12 @@ public class Chore implements Serializable {
         this.assignedToUser = assignedToUser;
     }
 
+
+    /**
+     * Gets chore id.
+     *
+     * @return the chore id
+     */
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name="increment", strategy="increment")
@@ -54,20 +65,40 @@ public class Chore implements Serializable {
         return choreId;
     }
 
+    /**
+     * Sets chore id.
+     *
+     * @param choreId the chore id
+     */
     public void setChoreId(int choreId) {
         this.choreId = choreId;
     }
 
+    /**
+     * Gets chore name.
+     *
+     * @return the chore name
+     */
     @Basic
     @Column(name="chore_name")
     public String getChoreName() {
         return choreName;
     }
 
+    /**
+     * Sets chore name.
+     *
+     * @param choreName the chore name
+     */
     public void setChoreName(String choreName) {
         this.choreName = choreName;
     }
 
+    /**
+     * Gets chore date.
+     *
+     * @return the chore date
+     */
     @Basic
     @Convert(converter = LocalDateAttributeConverter.class)
     @Column(name="chore_start_date")
@@ -75,26 +106,51 @@ public class Chore implements Serializable {
         return choreDate;
     }
 
+    /**
+     * Sets chore date.
+     *
+     * @param choreDate the chore date
+     */
     public void setChoreDate(LocalDate choreDate) {
         this.choreDate = choreDate;
     }
 
+    /**
+     * Gets chore interval.
+     *
+     * @return the chore interval
+     */
     @Basic
     @Column(name="chore_time_interval")
     public String getChoreInterval() {
         return choreInterval;
     }
 
+    /**
+     * Sets chore interval.
+     *
+     * @param choreInterval the chore interval
+     */
     public void setChoreInterval(String choreInterval) {
         this.choreInterval = choreInterval;
     }
 
+    /**
+     * Gets assigned to user.
+     *
+     * @return the assigned to user
+     */
     @Basic
     @Column(name="assigned_to_user")
     public String getAssignedToUser() {
         return assignedToUser;
     }
 
+    /**
+     * Sets assigned to user.
+     *
+     * @param assignedToUser the assigned to user
+     */
     public void setAssignedToUser(String assignedToUser) {
         this.assignedToUser = assignedToUser;
     }

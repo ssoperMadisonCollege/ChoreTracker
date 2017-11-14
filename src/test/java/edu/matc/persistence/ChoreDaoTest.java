@@ -10,6 +10,8 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
+ * The Chore dao test.
+ *
  * Created on 10/31/17.
  *
  * @author ssoper
@@ -18,7 +20,6 @@ public class ChoreDaoTest {
 
     ChoreDao dao;
     int numberOfChoresInDatabase;
-
     private final Logger log = Logger.getLogger(this.getClass());
     private LocalDateStringConverter dateConverter = new LocalDateStringConverter();
 
@@ -28,12 +29,22 @@ public class ChoreDaoTest {
         numberOfChoresInDatabase = dao.getAllChores().size();
     }
 
+    /**
+     * Get all chores test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getAllChoresTest() throws Exception {
         List<Chore> chores = dao.getAllChores();
         assertTrue(chores.size() > 0);
     }
 
+    /**
+     * Get chore test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getChoreTest() throws Exception {
         Chore chore = dao.getChore(1);
@@ -41,6 +52,11 @@ public class ChoreDaoTest {
         assertEquals("mow the lawn Chore was not returned", "mow the lawn", chore.getChoreName());
     }
 
+    /**
+     * Delete chore test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void deleteChoreTest() throws Exception {
 
@@ -51,6 +67,11 @@ public class ChoreDaoTest {
         assertTrue(chore == null);
     }
 
+    /**
+     * Add chore test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void addChoreTest() throws Exception {
         Chore expected = new Chore();
@@ -68,6 +89,11 @@ public class ChoreDaoTest {
         assertEquals("Number of rows didn't increase.", numberOfChoresInDatabase + 1, dao.getAllChores().size());
     }
 
+    /**
+     * Update chore test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void updateChoreTest() throws Exception {
         Chore chore = dao.getChore(5);

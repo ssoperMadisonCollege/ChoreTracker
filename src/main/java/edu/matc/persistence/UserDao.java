@@ -10,13 +10,16 @@ import java.util.List;
 
 
 /**
+ * The User dao.
+ *
  * @author ssoper 10/3/2017.
  */
 public class UserDao {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
-    /** Return a list of all users
+    /**
+     * Return a list of all users
      *
      * @return All users
      */
@@ -67,7 +70,7 @@ public class UserDao {
      *
      * CREATE step in CRUD (CREATE READ UPDATE DELETE)
      *
-     * @param user
+     * @param user the user
      * @return the userId of the inserted record
      */
     public int addUser(User user) {
@@ -121,7 +124,7 @@ public class UserDao {
      *
      * UPDATE step in CRUD (CREATE READ UPDATE DELETE)
      *
-     * @param user
+     * @param user the user
      */
     public void updateUser(User user) {
         Session databaseSession = null;

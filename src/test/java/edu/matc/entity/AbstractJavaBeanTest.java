@@ -11,11 +11,17 @@ import org.meanbean.lang.Factory;
 import org.meanbean.test.BeanTester;
 
 /**
- * This abstract class tests all project entities, which are all java beans.
- * @param <MyBean>
+ * This abstract class tests all project javabean entities.
+ *
+ * @param <MyBean> the type parameter
  */
 public abstract class AbstractJavaBeanTest<MyBean> {
 
+    /**
+     * Test that the bean is serializable.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void beanIsSerializable() throws Exception {
         final MyBean myBean = getBeanInstance();
@@ -25,11 +31,19 @@ public abstract class AbstractJavaBeanTest<MyBean> {
         assertEquals(myBean, deserializedMyBean);
     }
 
+    /**
+     * Test the equals and hash code contract.
+     */
     @Test
     public void equalsAndHashCodeContract() {
         EqualsVerifier.forClass(getBeanInstance().getClass()).suppress(Warning.STRICT_INHERITANCE, Warning.NONFINAL_FIELDS).verify();
     }
 
+    /**
+     * Test getter and setter correctness.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getterAndSetterCorrectness() throws Exception {
         final BeanTester beanTester = new BeanTester();
@@ -37,10 +51,15 @@ public abstract class AbstractJavaBeanTest<MyBean> {
         beanTester.testBean(getBeanInstance().getClass());
     }
 
+    /**
+     * Gets bean instance.
+     *
+     * @return the bean instance
+     */
     protected abstract MyBean getBeanInstance();
 
     /**
-     * Concrete Factory that creates a LocalDateTime.
+     * Concrete Factory that creates a LocalDateTime for use by the tests.
      */
     class LocalDateTimeFactory implements Factory {
 

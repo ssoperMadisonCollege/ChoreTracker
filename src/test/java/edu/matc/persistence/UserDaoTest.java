@@ -10,6 +10,8 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
+ * The User dao test.
+ *
  * Created on 10/3/17.
  *
  * @author ssoper
@@ -27,12 +29,22 @@ public class UserDaoTest {
         numberOfUsersInDatabase = dao.getAllUsers().size();
     }
 
+    /**
+     * Get all users test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getAllUsersTest() throws Exception {
         List<User> users = dao.getAllUsers();
         assertTrue(users.size() > 0);
     }
 
+    /**
+     * Get user test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getUserTest() throws Exception {
         User user = dao.getUser(4);
@@ -40,6 +52,11 @@ public class UserDaoTest {
         assertEquals("Mack was not returned", "Mack", user.getLastName());
     }
 
+    /**
+     * Delete user test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void deleteUserTest() throws Exception {
 
@@ -50,6 +67,11 @@ public class UserDaoTest {
         assertTrue(user == null);
     }
 
+    /**
+     * Add user test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void addUserTest() throws Exception {
         User user = new User();
@@ -68,6 +90,11 @@ public class UserDaoTest {
         assertEquals("Number of rows didn't increase.", numberOfUsersInDatabase + 1, dao.getAllUsers().size());
     }
 
+    /**
+     * Update user test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void updateUserTest() throws Exception {
         User user = dao.getUser(2);
