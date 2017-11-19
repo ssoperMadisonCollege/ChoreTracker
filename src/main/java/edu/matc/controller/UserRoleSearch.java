@@ -34,7 +34,7 @@ public class UserRoleSearch extends HttpServlet {
         log.error("UserRoles list: " + userRoles.toString());
         req.setAttribute("userRoles", userRoles);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/JSP/userRoleResults.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/JSP/Body/userRoleResults.jsp");
         dispatcher.forward(req, resp);
     }
 }

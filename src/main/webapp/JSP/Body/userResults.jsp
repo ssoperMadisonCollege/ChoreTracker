@@ -1,5 +1,5 @@
-<%@include file="Header/head.jsp"%>
-<%@include file="Sidebar/left-sidebar.jsp"%>
+<%@include file="../Header/head.jsp"%>
+<%@include file="../Sidebar/left-sidebar.jsp"%>
 <div class="col-sm-8 text-middle">
     <h2>Search the users, Admins Only</h2>
     <div class="container-fluid">
@@ -26,5 +26,5 @@
         </table>
     </div>
 </div>
-<%@include file="Sidebar/right-sidebar.jsp"%>
-<%@include file="Footer/footer.jsp"%>
+<%@include file="../Sidebar/right-sidebar.jsp"%>
+<%@include file="../Footer/footer.jsp"%>
