@@ -46,7 +46,8 @@ CREATE TABLE `users` (
   `user_email` varchar(30) NOT NULL,
   `user_phone` varchar(30) NOT NULL,
   `user_name` varchar(30) NOT NULL,
-  PRIMARY KEY (`userId`)
+  PRIMARY KEY (`userId`),
+  UNIQUE KEY `user_name` (`user_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `users` WRITE;
