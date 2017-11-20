@@ -14,11 +14,12 @@ import java.io.IOException;
 
 public class Login extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/JSP/Body/login.jsp");
-        dispatcher.forward(req, resp);
-
+        response.setContentType("text/html");
+        request.setAttribute("loggedInAs", request.getRemoteUser());
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/Body/login.jsp");
+        dispatcher.forward(request, response);
     }
 
 

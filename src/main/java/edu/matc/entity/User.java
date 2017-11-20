@@ -31,7 +31,29 @@ public class User implements Serializable {
     }
 
     /**
-     * Overloading the User constructor, passing in the database column values
+     * Partial constructor (no id)
+     *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param password  the password
+     * @param email     the email
+     * @param phone     the phone
+     */
+    public User(String firstName,
+                String lastName,
+                String password,
+                String email,
+                String phone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+        this.userName = userName;
+    }
+
+    /**
+     * Full constructor
      *
      * @param userId    the user id
      * @param firstName the first name
