@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * A simple servlet to add a user.
@@ -31,7 +30,7 @@ public class AddUser extends HttpServlet {
     private final Logger log = Logger.getLogger(this.getClass());
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         User user = new User();
         UserDao  userDao = new UserDao();

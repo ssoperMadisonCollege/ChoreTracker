@@ -25,12 +25,23 @@ public class UserRole implements Serializable {
     }
 
     /**
-     * Overloading the User constructor, passing in the database column values
+     * Partial constructor
      *
      * @param userRoleName the user role name
      * @param roleName     the role name
      */
     public UserRole(String userRoleName, String roleName) {
+        this.userRoleName = userRoleName;
+        this.roleName = roleName;
+    }
+
+    /**
+     * Full constructor
+     *
+     * @param userRoleName the user role name
+     * @param roleName     the role name
+     */
+    public UserRole(int userRoleId, String userRoleName, String roleName) {
         this.userRoleId = userRoleId;
         this.userRoleName = userRoleName;
         this.roleName = roleName;

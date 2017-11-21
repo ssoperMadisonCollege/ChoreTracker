@@ -16,8 +16,6 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        response.setContentType("text/html");
-        request.setAttribute("loggedInAs", request.getRemoteUser());
         RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/Body/login.jsp");
         dispatcher.forward(request, response);
     }

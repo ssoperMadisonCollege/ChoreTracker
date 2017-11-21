@@ -4,8 +4,6 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Objects;
-
 
 /**
  * A class to represent a user.
@@ -104,8 +102,7 @@ public class User implements Serializable {
      *
      * @return the first name
      */
-    @Basic
-    @Column(name = "first_name")
+    @Basic @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
@@ -124,8 +121,7 @@ public class User implements Serializable {
      *
      * @return the last name
      */
-    @Basic
-    @Column(name = "last_name")
+    @Basic @Column(name = "last_name")
     public String getLastName() {
         return lastName;
     }
@@ -144,8 +140,7 @@ public class User implements Serializable {
      *
      * @return the password
      */
-    @Basic
-    @Column(name = "user_password")
+    @Basic @Column(name = "user_password")
     public String getPassword() {
         return password;
     }
@@ -164,8 +159,7 @@ public class User implements Serializable {
      *
      * @return the email
      */
-    @Basic
-    @Column(name = "user_email")
+    @Basic @Column(name = "user_email")
     public String getEmail() {
         return email;
     }
@@ -184,8 +178,7 @@ public class User implements Serializable {
      *
      * @return the phone
      */
-    @Basic
-    @Column(name = "user_phone")
+    @Basic @Column(name = "user_phone")
     public String getPhone() {
         return phone;
     }
@@ -204,8 +197,7 @@ public class User implements Serializable {
      *
      * @return the user name
      */
-    @Basic
-    @Column(name = "user_name")
+    @Basic @Column(name = "user_name")
     public String getUserName() {
         return userName;
     }

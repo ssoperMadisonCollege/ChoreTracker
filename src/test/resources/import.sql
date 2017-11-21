@@ -29,7 +29,9 @@ CREATE TABLE `user_roles` (
   `user_role_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(30) NOT NULL,
   `role_name` varchar(30) NOT NULL,
-  PRIMARY KEY (`user_role_id`)
+  PRIMARY KEY (`user_role_id`),
+  UNIQUE KEY `user_name` (`user_name`),
+  CONSTRAINT `fkRoleUser` FOREIGN KEY (`userName`) REFERENCES `User` (`userName`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `user_roles` WRITE;
