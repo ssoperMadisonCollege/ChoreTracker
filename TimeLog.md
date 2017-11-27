@@ -40,6 +40,8 @@
 | 11/21/17 | Working on indie project.  Thinking about how foreign keys need to be brought into the database and the subsequent refactoring. | 1 | Database work = boring! Need to find some examples of how this works. |
 | 11/22/17 | Working on indie project. | 1 |  |
 | 11/26/17 | Working on indie project. | 6 | Broken tests. |
+| 11/27/17 | Working on indie project. | 1 | Fixed broken tests. Refactored code to reflect new way of displaying the userRole.|
+
 
 
 
