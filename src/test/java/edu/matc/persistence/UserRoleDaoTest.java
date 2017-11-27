@@ -101,7 +101,7 @@ public class UserRoleDaoTest {
      */
     @Test
     public void updateUserRoleTest() throws Exception {
-        UserRole userRole = userRoleDao.getUserRole(2);
+        UserRole userRole = userRoleDao.getUserRole(3);
         assertTrue(userRole != null);
         userRole.setRoleName("fakeRoleName");
         userRoleDao.updateUserRole(userRole);
