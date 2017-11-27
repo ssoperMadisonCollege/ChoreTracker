@@ -1,9 +1,13 @@
 package edu.matc.entity;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A class to represent a user.
@@ -21,6 +25,7 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private String userName;
+    private Set<UserRole> roles = new HashSet<UserRole>(0);
 
     /**
      * No-argument constructor to instantiate new User
@@ -41,7 +46,8 @@ public class User implements Serializable {
                 String lastName,
                 String password,
                 String email,
-                String phone) {
+                String phone,
+                String userName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
@@ -59,13 +65,15 @@ public class User implements Serializable {
      * @param password  the password
      * @param email     the email
      * @param phone     the phone
+     * @param userName  the username
      */
     public User(int userId,
                 String firstName,
                 String lastName,
                 String password,
                 String email,
-                String phone) {
+                String phone,
+                String userName) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -82,8 +90,8 @@ public class User implements Serializable {
      */
     @Id
     @GeneratedValue(generator = "increment")
-    @GenericGenerator(name="increment", strategy="increment")
-    @Column(name="userId")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    @Column(name = "userId")
     public int getUserId() {
         return userId;
     }
@@ -102,7 +110,8 @@ public class User implements Serializable {
      *
      * @return the first name
      */
-    @Basic @Column(name = "first_name")
+    @Basic
+    @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
@@ -121,7 +130,8 @@ public class User implements Serializable {
      *
      * @return the last name
      */
-    @Basic @Column(name = "last_name")
+    @Basic
+    @Column(name = "last_name")
     public String getLastName() {
         return lastName;
     }
@@ -140,7 +150,8 @@ public class User implements Serializable {
      *
      * @return the password
      */
-    @Basic @Column(name = "user_password")
+    @Basic
+    @Column(name = "user_password")
     public String getPassword() {
         return password;
     }
@@ -159,7 +170,8 @@ public class User implements Serializable {
      *
      * @return the email
      */
-    @Basic @Column(name = "user_email")
+    @Basic
+    @Column(name = "user_email")
     public String getEmail() {
         return email;
     }
@@ -178,7 +190,8 @@ public class User implements Serializable {
      *
      * @return the phone
      */
-    @Basic @Column(name = "user_phone")
+    @Basic
+    @Column(name = "user_phone")
     public String getPhone() {
         return phone;
     }
@@ -197,7 +210,8 @@ public class User implements Serializable {
      *
      * @return the user name
      */
-    @Basic @Column(name = "user_name")
+    @Basic
+    @Column(name = "user_name")
     public String getUserName() {
         return userName;
     }
@@ -209,6 +223,21 @@ public class User implements Serializable {
      */
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    /**
+     * Gets the set of roles for the user
+     *
+     * @return roles the set of roles for the user
+     */
+    @OneToMany(mappedBy = "user")
+    @Cascade({CascadeType.SAVE_UPDATE, CascadeType.DELETE})
+    public Set<UserRole> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<UserRole> roles) {
+        this.roles = roles;
     }
 
     @Override

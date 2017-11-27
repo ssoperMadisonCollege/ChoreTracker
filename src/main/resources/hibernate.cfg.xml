@@ -21,7 +21,7 @@
         <property name="show_sql">true</property>
 
         <!-- instruction to rebuild the database after each test -->
-        <!-- <property name="hbm2ddl.auto">create-drop</property> -->
+        <property name="hbm2ddl.auto">create-drop</property>
 
         <!-- instruction to read multiple lines from import.sql file -->
         <property name="hibernate.hbm2ddl.import_files_sql_extractor">org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor</property>

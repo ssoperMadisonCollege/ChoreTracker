@@ -38,6 +38,10 @@
 | 11/19/17 | Working on indie project. | 4 | Got the project bootstrapped and the JSPs organized into a logical structure.  Separated HTML from the JSPs. |
 | 11/20/17 | Working on indie project. | 3 | Working on adding a user with a role, may have to re think some of the database structure to add foreign keys.  Going to office hours with Paula for one-on-one code review. |
 | 11/21/17 | Working on indie project.  Thinking about how foreign keys need to be brought into the database and the subsequent refactoring. | 1 | Database work = boring! Need to find some examples of how this works. |
+| 11/22/17 | Working on indie project. | 1 |  |
+| 11/26/17 | Working on indie project. | 6 | Broken tests. |
+
+
 
 
  

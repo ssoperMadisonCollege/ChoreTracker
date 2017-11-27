@@ -46,7 +46,7 @@ public class AddUser extends HttpServlet {
 
         userDao.addUser(user);
 
-        userRole.setUserRoleName(user.getUserName());
+        userRole.setUser(user);
         userRole.setRoleName("registered-user");
 
         userRoleDao.addUserRole(userRole);

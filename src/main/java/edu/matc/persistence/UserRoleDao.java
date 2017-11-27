@@ -54,7 +54,7 @@ public class UserRoleDao {
             databaseSession = SessionFactoryProvider.getSessionFactory().openSession();
             transaction = databaseSession.beginTransaction();
             userRole = (UserRole) databaseSession.get(UserRole.class, id);
-        } catch (HibernateException he) {
+        } catch (Exception he) {
             if (transaction != null) {
                 transaction.rollback();
                 log.error("Error in getUserRole method with userRole id: " + id + ", ", he);

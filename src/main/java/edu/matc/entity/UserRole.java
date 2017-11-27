@@ -15,8 +15,8 @@ import java.io.Serializable;
 public class UserRole implements Serializable {
 
     private int userRoleId;
-    private String userRoleName;
     private String roleName;
+    private User user;
 
     /**
      * No-argument constructor to instantiate new UserRole
@@ -27,23 +27,23 @@ public class UserRole implements Serializable {
     /**
      * Partial constructor
      *
-     * @param userRoleName the user role name
-     * @param roleName     the role name
+     * @param user     the user role name
+     * @param roleName the role name
      */
-    public UserRole(String userRoleName, String roleName) {
-        this.userRoleName = userRoleName;
+    public UserRole(User user, String roleName) {
+        this.user = user;
         this.roleName = roleName;
     }
 
     /**
      * Full constructor
      *
-     * @param userRoleName the user role name
-     * @param roleName     the role name
+     * @param user     the user role name
+     * @param roleName the role name
      */
-    public UserRole(int userRoleId, String userRoleName, String roleName) {
+    public UserRole(int userRoleId, User user, String roleName) {
         this.userRoleId = userRoleId;
-        this.userRoleName = userRoleName;
+        this.user = user;
         this.roleName = roleName;
     }
 
@@ -54,8 +54,8 @@ public class UserRole implements Serializable {
      */
     @Id
     @GeneratedValue(generator = "increment")
-    @GenericGenerator(name="increment", strategy="increment")
-    @Column(name="user_role_id")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    @Column(name = "user_role_id")
     public int getUserRoleId() {
         return userRoleId;
     }
@@ -70,23 +70,23 @@ public class UserRole implements Serializable {
     }
 
     /**
-     * Gets user role name.
+     * Gets the user's username
      *
-     * @return the user role name
+     * @return user the user's username
      */
-    @Basic
-    @Column(name="user_name")
-    public String getUserRoleName() {
-        return userRoleName;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_name", referencedColumnName = "user_name", nullable = false)
+    public User getUser() {
+        return user;
     }
 
     /**
      * Sets user role name.
      *
-     * @param userRoleName the user role name
+     * @param user the user role name
      */
-    public void setUserRoleName(String userRoleName) {
-        this.userRoleName = userRoleName;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     /**
@@ -113,8 +113,8 @@ public class UserRole implements Serializable {
     public String toString() {
         return "UserRole{" +
                 "userRoleId=" + userRoleId +
-                ", userRoleName='" + userRoleName + '\'' +
                 ", roleName='" + roleName + '\'' +
+                ", user=" + user +
                 '}';
     }
 
@@ -126,16 +126,15 @@ public class UserRole implements Serializable {
         UserRole userRole = (UserRole) o;
 
         if (userRoleId != userRole.userRoleId) return false;
-        if (userRoleName != null ? !userRoleName.equals(userRole.userRoleName) : userRole.userRoleName != null)
-            return false;
-        return roleName != null ? roleName.equals(userRole.roleName) : userRole.roleName == null;
+        if (roleName != null ? !roleName.equals(userRole.roleName) : userRole.roleName != null) return false;
+        return user != null ? user.equals(userRole.user) : userRole.user == null;
     }
 
     @Override
     public int hashCode() {
         int result = userRoleId;
-        result = 31 * result + (userRoleName != null ? userRoleName.hashCode() : 0);
         result = 31 * result + (roleName != null ? roleName.hashCode() : 0);
+        result = 31 * result + (user != null ? user.hashCode() : 0);
         return result;
     }
 }
