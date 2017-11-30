@@ -41,6 +41,7 @@
 | 11/22/17 | Working on indie project. | 1 |  |
 | 11/26/17 | Working on indie project. | 6 | Broken tests. |
 | 11/27/17 | Working on indie project. | 1 | Fixed broken tests. Refactored code to reflect new way of displaying the userRole.|
+| 11/29/17 | Working on indie project. |  | |
 
 
 

@@ -21,8 +21,8 @@ more detail.
 
 ### Week 3
 - [x] Start making JSPs
-- [ ] Add in bootstrap
-- [ ] Create database and all tables/columns locally
+- [x] Add in bootstrap
+- [x] Create database and all tables/columns locally
 - [x] Time log entries
 - [x] Determine independent research topic
 - [x] Create class diagram
@@ -34,64 +34,60 @@ more detail.
 - [x] Create DAO for user crud
 - [x] Add unit tests for DAO
 - [x] Add user login  
-- [ ] Add user registration
+- [x] Add user registration
 - [x] Time log entries
 - [x] Add Maven for building
-- [ ] Add entities for remaining tables
+- [x] Add entities for remaining tables
 
 ### Week 5
 
 - [x] Time log entries
 - [x] Set up AWS EC2 instance
-- [ ] Create DAO for chores
+- [x] Create DAO for chores
 - [ ] Create DAO for chore report
-- [ ] Create display chore report functionality
 - [ ] Create display chore functionality
 - [ ] Add tests for new functionality
 
 ### Week 6
 - [x] Time log entries
-- [ ] Integration with AWS Simple SMS Service
+- [ ] Integration with AWS Simple Notification Service
 - [ ] Create add chore report functionality
 - [ ] Create add chore functionality
 - [x] Set up tomcat authorization locally
 
 ### Week 7
-- [ ] Time log entries
-- [ ] Add search functionality
-- [ ] Determine how to add paging of search results
-- [ ] Integration with weather service and/or snow depth data
+- [x] Time log entries
+- [x] Add search functionality
 
 ### Week 8
-- [ ] Time log entries
-- [ ] Implement paging of search results
-- [ ] Code review
+- [x] Time log entries
+- [x] Code review
 
 ### Week 9
-- [ ] Time log entries
-- [ ] Create database on AWS???
-- [ ] Set up authentication and db access in app on AWS???
+- [x] Time log entries
+- [x] Create database on AWS???
+- [x] Set up authentication and db access in app on AWS???
 - [ ] Add password reset/reminder function
 
 ### Week 10
-- [ ] Time log entries
+- [x] Time log entries
 
 ### Week 11
-- [ ] Time log entries
+- [x] Time log entries
 
 ### Week 12
-- [ ] Time log entries
+- [x] Time log entries
 
 ### Week 13
-- [ ] Time log entries
+- [x] Time log entries
 
 ### Week 14
+- [x] Time log entries
+
+### Week 15
 - [ ] Time log entries
 - [ ] Create final presentation
 
-### Week 15
-- [ ] Final Presentation
-- [ ] Time log entries
-
 ### Week 16
+- [ ] Final Presentation
 - [ ] Time log entries

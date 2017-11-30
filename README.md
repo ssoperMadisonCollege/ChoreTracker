@@ -46,6 +46,7 @@ approach so that it's easy to use on any input device.
   * Store users and roles
   * Store ChoreTracker information
 * Web Services or APIs
+  * Google Calendar API
   * Amazon Simple Notification Service or something similar for notifying users to do their chores
 * Amazon Simple Notification Service or something similar(independent research topic)
 * Logging
