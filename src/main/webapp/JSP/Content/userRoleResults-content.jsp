@@ -9,7 +9,7 @@
             <c:forEach items="${userRoles}" var="userRole">
                 <tr>
                     <td>${userRole.userRoleId} </td>
-                    <td>${userRole.user} </td>
+                    <td>${userRole.user.userName} </td>
                     <td>${userRole.roleName} </td>
                 </tr>
             </c:forEach>

@@ -1,9 +1,7 @@
 package edu.matc.controller;
 
-import edu.matc.entity.Chore;
 import edu.matc.entity.User;
 import edu.matc.entity.UserRole;
-import edu.matc.persistence.ChoreDao;
 import edu.matc.persistence.UserDao;
 import edu.matc.persistence.UserRoleDao;
 import org.apache.log4j.Logger;

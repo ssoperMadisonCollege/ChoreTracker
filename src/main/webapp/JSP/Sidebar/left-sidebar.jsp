@@ -5,7 +5,7 @@
     <p><a href = "houseSearch">House Search</a></p>
     <p><a href = "choreSearch">Chore Search</a></p>
     <p><a href = "userRoleSearch">UserRole Search</a></p>
-    <p><a href = "addUser">Register</a></p>
+    <p><a href = "addUserForm">Register</a></p>
 </div>
 
 
