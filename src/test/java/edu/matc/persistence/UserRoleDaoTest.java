@@ -39,7 +39,7 @@ public class UserRoleDaoTest {
         List<UserRole> userRoles = userRoleDao.getAllUserRoles();
         assertTrue(userRoles.size() > 0);
         for (UserRole role : userRoles) {
-            System.out.println("All user roles: " + role);
+            log.info("All user roles: " + role);
         }
     }
 
@@ -51,7 +51,7 @@ public class UserRoleDaoTest {
     @Test
     public void getUserRoleTest() throws Exception {
         UserRole userRole = userRoleDao.getUserRole(1);
-        System.out.println("The userRole: " + userRole);
+        log.info("The userRole: " + userRole);
         assertNotNull("UserRole with id of value 1 wasn't found", userRole);
     }
 
@@ -66,12 +66,12 @@ public class UserRoleDaoTest {
         User user = new User(7,"Liz", "Pelton", "password", "lpelton@wifeMail.com", "608-111-2222", "lpelton");
         UserDao userDao = new UserDao();
         userDao.addUser(user);
-        System.out.println("Added the user to user dao: " + user);
+        log.info("Added the user to user dao: " + user);
 
         // Create a userRole, add it to the database
         UserRole userRole = new UserRole(7, user, "registered-user");
         userRoleDao.addUserRole(userRole);
-        System.out.println("Added the userRole to userRole dao: " + userRole);
+        log.info("Added the userRole to userRole dao: " + userRole);
 
         // get the added user role
         UserRole newUserRole = userRoleDao.getUserRole(7);

@@ -8,6 +8,7 @@
             <tr><td>Password: <input    type="text" name="password"     id="password"></td></tr>
             <tr><td>E-mail: <input      type="text" name="email"        id="email"></td></tr>
             <tr><td>Phone: <input       type="text" name="phone"        id="phone"></td></tr>
+            <tr><td>House name: <input       type="text" name="houseName"        id="houseName"></td></tr>
             <tr><td><button             type="submit">Register</button></td></tr>
         </table>
     </form>

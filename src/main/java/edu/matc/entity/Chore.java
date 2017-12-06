@@ -21,6 +21,9 @@ public class Chore implements Serializable {
     private LocalDate choreDate;
     private String choreInterval;
     private String assignedToUser;
+    /*
+    private String
+     */
 
     /**
      * No-argument constructor to instantiate new Chore

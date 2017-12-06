@@ -1,7 +1,9 @@
 package edu.matc.controller;
 
+import edu.matc.entity.House;
 import edu.matc.entity.User;
 import edu.matc.entity.UserRole;
+import edu.matc.persistence.HouseDao;
 import edu.matc.persistence.UserDao;
 import edu.matc.persistence.UserRoleDao;
 import org.apache.log4j.Logger;
@@ -34,6 +36,8 @@ public class AddUser extends HttpServlet {
         UserDao  userDao = new UserDao();
         UserRole userRole = new UserRole();
         UserRoleDao userRoleDao = new UserRoleDao();
+        House house = new House();
+        HouseDao houseDao = new HouseDao();
 
         user.setFirstName(request.getParameter("firstName"));
         user.setLastName(request.getParameter("lastName"));
@@ -41,8 +45,15 @@ public class AddUser extends HttpServlet {
         user.setPassword(request.getParameter("password"));
         user.setEmail(request.getParameter("email"));
         user.setPhone(request.getParameter("phone"));
+        house.setHouseName(request.getParameter("houseName"));
+
+        log.info("House value: " + request.getParameter("houseName"));
 
         userDao.addUser(user);
+
+        if ((null != request.getParameter("houseName")) || ("" != request.getParameter("houseName"))) {
+            houseDao.addHouse(house);
+        }
 
         userRole.setUser(user);
         userRole.setRoleName("registered-user");

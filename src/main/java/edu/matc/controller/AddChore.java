@@ -1,62 +1,46 @@
 package edu.matc.controller;
 
-import com.google.api.client.util.DateTime;
-import com.google.api.services.calendar.model.Event;
-import com.google.api.services.calendar.model.EventAttendee;
-import com.google.api.services.calendar.model.EventDateTime;
-import com.google.api.services.calendar.model.EventReminder;
+import edu.matc.entity.Chore;
+import edu.matc.persistence.ChoreDao;
+import org.apache.log4j.Logger;
 
-import java.util.Arrays;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.*;
+import java.io.IOException;
+import java.time.LocalDate;
 
 /**
- * Refer to the Java quickstart on how to setup the environment:
- * https://developers.google.com/google-apps/calendar/quickstart/java
- * Change the scope to CalendarScopes.CALENDAR and delete any stored
- * credentials.
+ * A simple servlet to add a chore.
+ * @author ssoper
  */
-public class AddChore {
 
+@WebServlet(
+        urlPatterns = {"/addChore"}
+)
 
+public class AddChore extends HttpServlet {
 
-    Event event = new Event()
-            .setSummary("Google I/O 2015")
-            .setLocation("800 Howard St., San Francisco, CA 94103")
-            .setDescription("A chance to hear more about Google's developer products.");
+    private final Logger log = Logger.getLogger(this.getClass());
 
-    DateTime startDateTime = new DateTime("2015-05-28T09:00:00-07:00");
-    EventDateTime start = new EventDateTime()
-            .setDateTime(startDateTime)
-            .setTimeZone("America/Los_Angeles");
-    event.setStart(start);
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    DateTime endDateTime = new DateTime("2015-05-28T17:00:00-07:00");
-    EventDateTime end = new EventDateTime()
-            .setDateTime(endDateTime)
-            .setTimeZone("America/Los_Angeles");
-    event.setEnd(end);
+        Chore chore = new Chore();
+        ChoreDao  choreDao = new ChoreDao();
 
-    String[] recurrence = new String[] {"RRULE:FREQ=DAILY;COUNT=2"};
-    event.setRecurrence(Arrays.asList(recurrence));
+        chore.setChoreName(request.getParameter("choreName"));
+        chore.setChoreDate(LocalDate.parse(request.getParameter("choreDate")));
+        chore.setChoreName(request.getParameter("choreName"));
+        chore.setChoreInterval(request.getParameter("choreInterval"));
+        chore.setAssignedToUser(request.getParameter("assignedToUser"));
 
-    EventAttendee[] attendees = new EventAttendee[] {
-            new EventAttendee().setEmail("lpage@example.com"),
-            new EventAttendee().setEmail("sbrin@example.com"),
-    };
-    event.setAttendees(Arrays.asList(attendees));
+        choreDao.addChore(chore);
 
-    EventReminder[] reminderOverrides = new EventReminder[] {
-            new EventReminder().setMethod("email").setMinutes(24 * 60),
-            new EventReminder().setMethod("popup").setMinutes(10),
-    };
-    Event.Reminders reminders = new Event.Reminders()
-            .setUseDefault(false)
-            .setOverrides(Arrays.asList(reminderOverrides));
-    event.setReminders(reminders);
-
-    String calendarId = "primary";
-    event = service.events().insert(calendarId, event).execute();
-
-    System.out.printf("Event created: %s\n", event.getHtmlLink());
-
-
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/Body/addChore.jsp");
+        dispatcher.forward(request, response);
+    }
 }
