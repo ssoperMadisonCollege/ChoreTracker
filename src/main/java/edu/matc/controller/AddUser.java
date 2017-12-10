@@ -17,7 +17,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 /**
- * A simple servlet to add a user.
+ * A simple servlet to add a user and a house.
  * @author ssoper
  */
 
@@ -45,19 +45,15 @@ public class AddUser extends HttpServlet {
         user.setPassword(request.getParameter("password"));
         user.setEmail(request.getParameter("email"));
         user.setPhone(request.getParameter("phone"));
-        house.setHouseName(request.getParameter("houseName"));
-
-        log.info("House value: " + request.getParameter("houseName"));
 
         userDao.addUser(user);
 
-        if ((null != request.getParameter("houseName")) || ("" != request.getParameter("houseName"))) {
-            houseDao.addHouse(house);
-        }
+        house.setUser(user);
+        house.setHouseName(request.getParameter("houseName"));
+        houseDao.addHouse(house);
 
         userRole.setUser(user);
         userRole.setRoleName("registered-user");
-
         userRoleDao.addUserRole(userRole);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/Body/addUser.jsp");

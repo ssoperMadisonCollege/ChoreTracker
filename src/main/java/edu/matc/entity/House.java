@@ -17,6 +17,7 @@ public class House implements Serializable {
 
     private int houseId;
     private String houseName;
+    private User user;
 
     /**
      * No-argument constructor to instantiate new House
@@ -25,17 +26,34 @@ public class House implements Serializable {
     }
 
     /**
-     * Overloading the House constructor, passing in the database column values
+     * Partial constructor.
+     *
+     * @param houseName the house name
+     * @param user the username
+     */
+    public House(
+            String houseName,
+            User user
+    ) {
+        this.houseName = houseName;
+        this.user = user;
+    }
+
+    /**
+     * Full constructor.
      *
      * @param houseId   the house id
      * @param houseName the house name
+     * @param user the username
      */
     public House(
             int houseId,
-            String houseName
+            String houseName,
+            User user
     ) {
         this.houseId = houseId;
         this.houseName = houseName;
+        this.user = user;
     }
 
     /**
@@ -79,6 +97,18 @@ public class House implements Serializable {
     public void setHouseName(String houseName) {
         this.houseName = houseName;
     }
+
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_name", referencedColumnName = "user_name", nullable = false)
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 
     @Override
     public String toString() {

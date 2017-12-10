@@ -55,9 +55,12 @@ UNLOCK TABLES;
 CREATE TABLE `houses` (
   `houseId` int(11) NOT NULL AUTO_INCREMENT,
   `house_name` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`houseId`)
+  `user_name` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`houseId`),
+  UNIQUE KEY `user_name` (`user_name`),
+  CONSTRAINT `fkHouseUser` FOREIGN KEY (`user_name`) REFERENCES `users` (`user_name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `houses` WRITE;
-INSERT INTO `houses` VALUES (1,'Soper House'),(2,'Pelton House'),(3,'Animal House'),(4,'House of Cards');
+INSERT INTO `houses` VALUES (1,'Soper House', 'DTillman'),(2,'Pelton House', 'KMack'),(3,'Animal House', 'JCoyne'),(4,'House of Cards', 'BCurry'),(5,'House of the Rising Sun','FHensen'),(6,'Road House','DKlein'),(7,'Admin House','admin');
 UNLOCK TABLES;

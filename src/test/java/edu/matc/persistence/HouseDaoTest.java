@@ -1,6 +1,7 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.House;
+import edu.matc.entity.User;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
@@ -46,9 +47,34 @@ public class HouseDaoTest {
      */
     @Test
     public void getHouseTest() throws Exception {
-        House house = dao.getHouse(1);
+        House house = dao.getHouse(2);
         assertNotNull("House with id of value 1 wasn't found", house);
-        assertEquals("Soper House was not returned", "Soper House", house.getHouseName());
+        assertEquals("Pelton was not returned", "Pelton House", house.getHouseName());
+    }
+
+
+    /**
+     * Add house test.
+     *
+     * @throws Exception the exception
+     */
+    @Test
+    public void addHouseTest() throws Exception {
+
+        // Create a user, add it to the database
+        User user = new User(7,"Liz", "Pelton", "password", "lpelton@wifeMail.com", "608-111-2222", "lpelton");
+        UserDao userDao = new UserDao();
+        userDao.addUser(user);
+        log.info("Added the user to user dao: " + user);
+
+        // Create a house, add it to the database
+        House house = new House(8,"testHouse", user);
+        dao.addHouse(house);
+        log.info("Added the house to house dao: " + house);
+
+        // get the added user role
+        House newHouse = dao.getHouse(8);
+        assertTrue(house.equals(newHouse));
     }
 
     /**
@@ -64,24 +90,6 @@ public class HouseDaoTest {
         dao.deleteHouse(5);
         house = dao.getHouse(5);
         assertTrue(house == null);
-    }
-
-    /**
-     * Add house test.
-     *
-     * @throws Exception the exception
-     */
-    @Test
-    public void addHouseTest() throws Exception {
-        House house = new House();
-        house.setHouseId(45);
-        house.setHouseName("testHouse");
-
-        int newIdForNewHouse = dao.addHouse(house);
-        House actualHouse = dao.getHouse(newIdForNewHouse);
-        assertNotNull("New test house not inserted.", actualHouse);
-        assertEquals("New test house wasn't added in the right spot", "testHouse",actualHouse.getHouseName());
-        assertEquals("Number of rows didn't increase.", numberOfHousesInDatabase + 1, dao.getAllHouses().size());
     }
 
     /**

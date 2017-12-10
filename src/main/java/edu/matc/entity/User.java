@@ -26,6 +26,8 @@ public class User implements Serializable {
     private String phone;
     private String userName;
     private Set<UserRole> roles = new HashSet<UserRole>(0);
+    private Set<House> house = new HashSet<House>();
+
 
     /**
      * No-argument constructor to instantiate new User
@@ -239,6 +241,22 @@ public class User implements Serializable {
     public void setRoles(Set<UserRole> roles) {
         this.roles = roles;
     }
+
+    /**
+     * Gets the house for the user
+     *
+     * @return house the house for the user
+     */
+    @OneToMany(mappedBy = "user")
+    @Cascade({CascadeType.SAVE_UPDATE, CascadeType.DELETE})
+    public Set<House> getHouses() {
+        return house;
+    }
+
+    public void setHouses(Set<House> house) {
+        this.house = house;
+    }
+
 
     @Override
     public String toString() {
