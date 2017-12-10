@@ -62,15 +62,16 @@ public class HouseDaoTest {
     public void addHouseTest() throws Exception {
 
         // Create a user, add it to the database
-        User user = new User(7,"Liz", "Pelton", "password", "lpelton@wifeMail.com", "608-111-2222", "lpelton");
+        User user = new User("Liz", "Pelton", "password", "lpelton@wifeMail.com", "608-111-2222", "lpelton");
         UserDao userDao = new UserDao();
         userDao.addUser(user);
-        log.info("Added the user to user dao: " + user);
+        log.error("Added the user to user dao: " + user);
+
 
         // Create a house, add it to the database
         House house = new House(8,"testHouse", user);
         dao.addHouse(house);
-        log.info("Added the house to house dao: " + house);
+        log.error("Added the house to house dao: " + house);
 
         // get the added user role
         House newHouse = dao.getHouse(8);

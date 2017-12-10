@@ -6,19 +6,18 @@ DROP TABLE IF EXISTS `houses`;
 SET FOREIGN_KEY_CHECKS  = 0;
 
 CREATE TABLE `users` (
-  `userId` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(30) DEFAULT NULL,
   `last_name` varchar(30) DEFAULT NULL,
   `user_password` varchar(30) DEFAULT NULL,
   `user_email` varchar(30) DEFAULT NULL,
   `user_phone` varchar(30) DEFAULT NULL,
-  `user_name` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`userId`),
+  `user_name` varchar(30) NOT NULL,
+  PRIMARY KEY (`user_name`),
   UNIQUE KEY `user_name` (`user_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `users` WRITE;
-INSERT INTO `users` VALUES (1,'Joe','Coyne','password','email@email.com','123-456-7890','JCoyne'),(2,'Fred','Hensen','password','email@hotmail.com','111-111-1111','FHensen'),(3,'Barney','Curry','password','email@gmail.com','222-222-2222','BCurry'),(4,'Karen','Mack','password','fake@yahoo.com','333-333-3333','KMack'),(5,'Dianne','Klein','password','this@mailapp.com','444-444-4444','DKlein'),(6,'Dawn','Tillman','password','sample@email.com','555-555-5555','DTillman'),(8,'admin','admin','password','admin@admin.admin','0987-654-321','admin');
+INSERT INTO `users` VALUES ('Joe','Coyne','password','email@email.com','123-456-7890','JCoyne'),('Fred','Hensen','password','email@hotmail.com','111-111-1111','FHensen'),('Barney','Curry','password','email@gmail.com','222-222-2222','BCurry'),('Karen','Mack','password','fake@yahoo.com','333-333-3333','KMack'),('Dianne','Klein','password','this@mailapp.com','444-444-4444','DKlein'),('Dawn','Tillman','password','sample@email.com','555-555-5555','DTillman'),('admin','admin','password','admin@admin.admin','0987-654-321','admin');
 UNLOCK TABLES;
 
 CREATE TABLE `user_roles` (
@@ -27,7 +26,8 @@ CREATE TABLE `user_roles` (
   `role_name` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`user_role_id`),
   UNIQUE KEY `user_name` (`user_name`),
-  CONSTRAINT `fkRoleUser` FOREIGN KEY (`user_name`) REFERENCES `users` (`user_name`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `fkRoleUser` FOREIGN KEY (`user_name`) REFERENCES `users` (`user_name`)
+  ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `user_roles` WRITE;
@@ -58,7 +58,8 @@ CREATE TABLE `houses` (
   `user_name` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`houseId`),
   UNIQUE KEY `user_name` (`user_name`),
-  CONSTRAINT `fkHouseUser` FOREIGN KEY (`user_name`) REFERENCES `users` (`user_name`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `fkHouseUser` FOREIGN KEY (`user_name`) REFERENCES `users` (`user_name`)
+  ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 LOCK TABLES `houses` WRITE;

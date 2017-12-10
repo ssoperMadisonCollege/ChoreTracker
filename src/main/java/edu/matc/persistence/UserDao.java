@@ -38,14 +38,14 @@ public class UserDao {
     }
 
     /**
-     * retrieve a user given their id
+     * retrieve a user given their userName
      *
      * READ step in CRUD (CREATE READ UPDATE DELETE)
      *
-     * @param id the user's id
+     * @param userName the user's userName
      * @return user
      */
-    public User getUser(int id) {
+    public User getUser(String userName) {
         User user = null;
         Session databaseSession = null;
         Transaction transaction = null;
@@ -53,11 +53,11 @@ public class UserDao {
         try {
             databaseSession = SessionFactoryProvider.getSessionFactory().openSession();
             transaction = databaseSession.beginTransaction();
-            user = (User) databaseSession.get(User.class, id);
+            user = (User) databaseSession.get(User.class, userName);
         } catch (HibernateException he) {
             if (transaction != null) {
                 transaction.rollback();
-                log.error("Error in getUser method with user id: " + id + ", ", he);
+                log.error("Error in getUser method with user name: " + userName + ", ", he);
             }
         } finally {
             databaseSession.close();
@@ -73,46 +73,46 @@ public class UserDao {
      * @param user the user
      * @return the userId of the inserted record
      */
-    public int addUser(User user) {
+    public String addUser(User user) {
         Session databaseSession = null;
         Transaction transaction = null;
-        int userId = 0;
+        String userName = null;
         try {
             databaseSession = SessionFactoryProvider.getSessionFactory().openSession();
             transaction = databaseSession.beginTransaction();
-            userId = (int) databaseSession.save(user);
+            userName = (String) databaseSession.save(user);
             transaction.commit();
         } catch(HibernateException he) {
             if (transaction != null) {
                 transaction.rollback();
-                log.error("Error in addUser method with user id: " + userId + ", ", he);
+                log.error("Error in addUser method with user name: " + userName + ", ", he);
             }
         } finally {
             databaseSession.close();
         }
-        return userId;
+        return userName;
     }
 
     /**
-     * delete a user by id
+     * delete a user by userName
      *
      * DELETE step in CRUD (CREATE READ UPDATE DELETE)
      *
-     * @param id the user's id
+     * @param userName the user's user name
      */
-    public void deleteUser(int id) {
+    public void deleteUser(String userName) {
         Session databaseSession = null;
         Transaction transaction = null;
         try {
             databaseSession = SessionFactoryProvider.getSessionFactory().openSession();
             transaction = databaseSession.beginTransaction();
-            User user = (User) databaseSession.get(User.class, id);
+            User user = (User) databaseSession.get(User.class, userName);
             databaseSession.delete(user);
             transaction.commit();
         } catch(HibernateException he) {
             if (transaction != null) {
                 transaction.rollback();
-                log.error("Error in deleteUser method with user id: " + id + ", ", he);
+                log.error("Error in deleteUser method with userName: " + userName + ", ", he);
             }
         } finally {
             databaseSession.close();

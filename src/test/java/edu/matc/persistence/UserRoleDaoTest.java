@@ -63,7 +63,7 @@ public class UserRoleDaoTest {
     @Test
     public void testAddUserRole() throws Exception {
         // Create a user, add it to the database
-        User user = new User(7,"Liz", "Pelton", "password", "lpelton@wifeMail.com", "608-111-2222", "lpelton");
+        User user = new User("Liz", "Pelton", "password", "lpelton@wifeMail.com", "608-111-2222", "lpelton");
         UserDao userDao = new UserDao();
         userDao.addUser(user);
         log.info("Added the user to user dao: " + user);
