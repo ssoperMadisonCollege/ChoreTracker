@@ -4,7 +4,7 @@
         <TABLE>
             <TR><TD>User name: <INPUT TYPE="TEXT" NAME="j_username"></TD></TR>
             <TR><TD>Password: <INPUT TYPE="PASSWORD" NAME="j_password"></TD></TR>
-            <TR><TH><INPUT TYPE="SUBMIT" VALUE="login"></TH></TR>
+            <TR><TH><INPUT TYPE="submit" VALUE="login" id="loginButton"></TH></TR>
         </TABLE>
     </FORM>
 </div>

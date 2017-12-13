@@ -1,6 +1,6 @@
 <div class="col-sm-8 text-middle">
     <h2>Register as a new user</h2>
-    <form action="addUser" method="POST">
+    <form action="addUser" method="POST" id="registrationForm">
         <table>
             <tr><td>First Name: <input  type="text"     name="firstName"    id="firstName"></td></tr>
             <tr><td>Last Name: <input   type="text"     name="lastName"     id="lastName"></td></tr>
@@ -13,3 +13,6 @@
         </table>
     </form>
 </div>
+<!-- TODO get user registration validation working
+<script type="text/javascript" src="../../JS/registrationValidation.js"></script>
+-->
