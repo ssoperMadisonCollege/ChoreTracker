@@ -6,6 +6,33 @@
            version="2.5">
 
   <display-name>Archetype Created Web Application</display-name>
+  <!-- Tell the server to use form-based authentication. -->
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/JSP/Body/login.jsp</form-login-page>
+      <form-error-page>/JSP/Body/failedLogin.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>login</web-resource-name>
+      <url-pattern>/login</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>administrator</role-name>
+      <role-name>registered-user</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-role>
+    <role-name>registered-user</role-name>
+  </security-role>
+
+  <security-role>
+    <role-name>administrator</role-name>
+  </security-role>
 
   <!-- Protect everything within the "investing" directory. -->
   <security-constraint>
@@ -85,21 +112,5 @@
     </auth-constraint>
   </security-constraint>
 
-  <security-role>
-    <role-name>registered-user</role-name>
-  </security-role>
-
-  <security-role>
-    <role-name>administrator</role-name>
-  </security-role>
-
-  <!-- Tell the server to use form-based authentication. -->
-  <login-config>
-    <auth-method>FORM</auth-method>
-    <form-login-config>
-      <form-login-page>/JSP/Body/login.jsp</form-login-page>
-      <form-error-page>/JSP/Body/failedLogin.jsp</form-error-page>
-    </form-login-config>
-  </login-config>
 
 </web-app>

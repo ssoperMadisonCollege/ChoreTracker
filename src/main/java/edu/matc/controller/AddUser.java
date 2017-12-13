@@ -56,7 +56,7 @@ public class AddUser extends HttpServlet {
         userRole.setRoleName("registered-user");
         userRoleDao.addUserRole(userRole);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/Body/addUser.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/Body/addUserSuccess.jsp");
         dispatcher.forward(request, response);
     }
 }
