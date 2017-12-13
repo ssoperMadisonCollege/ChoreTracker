@@ -1,7 +1,7 @@
 package edu.matc.controller;
 
-import edu.matc.entity.User;
-import edu.matc.persistence.UserDao;
+import edu.matc.entity.Chore;
+import edu.matc.persistence.ChoreDao;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 
@@ -17,34 +17,34 @@ import java.util.List;
 
 
 /**
- * A simple servlet to delete a user.
+ * A simple servlet to delete a chore.
  */
 @WebServlet (
-        urlPatterns = {"/deleteUser"}
+        urlPatterns = {"/deleteChore"}
 )
 
-public class DeleteUser extends HttpServlet {
+public class DeleteChore extends HttpServlet {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String deleteUserName = request.getParameter("userCheckbox");
-        log.info("userCheckBox value: " + deleteUserName);
+        int deleteChore = Integer.parseInt(request.getParameter("choreCheckbox"));
+        log.info("choreCheckBox value: " + deleteChore);
         String url = "";
 
         try {
-            UserDao dao = new UserDao();
-            dao.deleteUser(deleteUserName);
-            List<User> users = dao.getAllUsers();
-            log.info("new list of users after delete: " + users);
-            request.setAttribute("users", users);
-            url = "JSP/Body/userResults.jsp";
+            ChoreDao dao = new ChoreDao();
+            dao.deleteChore(deleteChore);
+            List<Chore> chores = dao.getAllChores();
+            log.info("new list of chores after delete: " + chores);
+            request.setAttribute("chores", chores);
+            url = "JSP/Body/choreResults.jsp";
         } catch (HibernateException he) {
             HttpSession session = request.getSession();
-            log.error("Error deleting user: " + deleteUserName, he);
-            session.setAttribute("ErrorMessage","Error deleting user: " + deleteUserName);
+            log.error("Error deleting chore: " + deleteChore, he);
+            session.setAttribute("ErrorMessage","Error deleting chore: " + deleteChore);
             // TODO redirect to an error page
             response.sendRedirect(url);
         }
