@@ -65,5 +65,6 @@ approach so that it's easy to use on any input device.
 
 ### [Time Log](TimeLog.md) 
 ### [Journal](Journal.md)
+### [Video Overview](https://www.youtube.com/watch?v=B3YKFtj3qmw&feature=youtu.be)
 
 
