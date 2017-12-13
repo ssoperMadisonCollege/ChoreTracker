@@ -5,6 +5,7 @@ import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventAttendee;
 import com.google.api.services.calendar.model.EventDateTime;
 import com.google.api.services.calendar.model.EventReminder;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -20,6 +21,8 @@ import static edu.matc.controller.Quickstart.getCalendarService;
 public class AddEvent {
 
     com.google.api.services.calendar.Calendar service = getCalendarService();
+
+    private final Logger log = Logger.getLogger(this.getClass());
 
     public AddEvent() throws IOException {};
 
@@ -62,7 +65,7 @@ public class AddEvent {
         String calendarId = "primary";
         event = service.events().insert(calendarId, event).execute();
 
-        System.out.printf("Event created: %s\n", event.getHtmlLink());
+        log.info("Event created: %s\n" + event.getHtmlLink());
 
     }
 }

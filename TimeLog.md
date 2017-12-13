@@ -48,6 +48,7 @@
 | 12/5/17 | Working on indie project. | 5 | Looking at Google Calendar API, trying to figure out how to implement it into my project. |
 | 12/6/17 | Working on indie project. | 2 | Implementing the add chore and house into the UI |
 | 12/10/17 | Working on indie project. | 6 | Working on user delete.  Making progress but still broken. |
+| 12/12/17 | Working on indie project. | 4 | Auth was broken, fixed it. |
 
 
 
