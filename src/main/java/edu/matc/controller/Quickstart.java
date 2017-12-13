@@ -83,8 +83,7 @@ public class Quickstart {
                         .build();
         Credential credential = new AuthorizationCodeInstalledApp(
                 flow, new LocalServerReceiver()).authorize("user");
-        System.out.println(
-                "Credentials saved to " + DATA_STORE_DIR.getAbsolutePath());
+        //TODO add logging to show where credentials are saved
         return credential;
     }
 
@@ -109,7 +108,7 @@ public class Quickstart {
      * @param args the input arguments
      * @throws IOException the io exception
      *
-     * TODO Move the main method into its own class
+     * TODO Move the main method into its own class, add logging to the if else statements
      */
     public static void main(String[] args) throws IOException {
         // Build a new authorized API client service.
@@ -128,15 +127,12 @@ public class Quickstart {
                 .execute();
         List<Event> items = events.getItems();
         if (items.size() == 0) {
-            System.out.println("No upcoming events found.");
         } else {
-            System.out.println("Upcoming events");
             for (Event event : items) {
                 DateTime start = event.getStart().getDateTime();
                 if (start == null) {
                     start = event.getStart().getDate();
                 }
-                System.out.printf("%s (%s)\n", event.getSummary(), start);
             }
         }
     }
