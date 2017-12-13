@@ -40,7 +40,7 @@ public class AddChore extends HttpServlet {
 
         choreDao.addChore(chore);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/Body/addChore.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/Body/addChoreSuccess.jsp");
         dispatcher.forward(request, response);
     }
 }

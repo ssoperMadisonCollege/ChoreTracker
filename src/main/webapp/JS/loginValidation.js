@@ -1,3 +1,4 @@
+// TODO get login validation working
 $(document).ready(function(){
 
     $('#loginForm').bootstrapValidator({
