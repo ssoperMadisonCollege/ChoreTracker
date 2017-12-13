@@ -20,12 +20,25 @@ import static edu.matc.controller.Quickstart.getCalendarService;
  */
 public class AddEvent {
 
+    /**
+     * The Service.
+     */
     com.google.api.services.calendar.Calendar service = getCalendarService();
 
     private final Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     * Instantiates a new Add event.
+     *
+     * @throws IOException the io exception
+     */
     public AddEvent() throws IOException {};
 
+    /**
+     * Add.
+     *
+     * @throws IOException the io exception
+     */
     public void add() throws IOException {
 
         Event event = new Event()

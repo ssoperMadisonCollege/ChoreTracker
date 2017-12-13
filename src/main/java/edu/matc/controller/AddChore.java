@@ -15,9 +15,9 @@ import java.time.LocalDate;
 
 /**
  * A simple servlet to add a chore.
+ *
  * @author ssoper
  */
-
 @WebServlet(
         urlPatterns = {"/addChore"}
 )

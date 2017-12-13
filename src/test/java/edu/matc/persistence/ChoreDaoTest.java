@@ -75,6 +75,7 @@ public class ChoreDaoTest {
     @Test
     public void addChoreTest() throws Exception {
         Chore expected = new Chore();
+
         // Expected
         expected.setChoreId(5);
         expected.setChoreName("fix leaky garage door");
@@ -104,6 +105,4 @@ public class ChoreDaoTest {
         assertTrue(chore != null);
         assertEquals("The chore name wasn't successfully updated.", "anotherTestChore", chore.getChoreName());
     }
-
-    //TODO use .equals() on each entity for easy testing - insert a chore to the db and read it back
 }

@@ -30,20 +30,11 @@ public class DeleteUser extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        UserDao userToDelete = new UserDao();
-//
-//        int userId = Integer.parseInt(request.getParameter("userCheckbox"));
-//        userToDelete.deleteUser(userId);
-//
-//        log.error("The deleted user: " + userToDelete);
-
-
         String deleteUserName = request.getParameter("userCheckbox");
         String url = "";
 
         try {
             UserDao dao = new UserDao();
-
             dao.deleteUser(deleteUserName);
             List<User> users = dao.getAllUsers();
             User user = dao.getUser(request.getRemoteUser());
@@ -52,9 +43,9 @@ public class DeleteUser extends HttpServlet {
             url = "../Body/userResults.jsp";
         } catch (HibernateException he) {
             HttpSession session = request.getSession();
-            log.error("Error while attempting to delete user " + deleteUserName, he);
-            session.setAttribute("ErrorMessage","Error while attempting to delete user " + deleteUserName);
-            url = "/generalError.jsp";
+            log.error("Error deleting user: " + deleteUserName, he);
+            session.setAttribute("ErrorMessage","Error deleting user: " + deleteUserName);
+            // TODO redirect to an error page
             response.sendRedirect(url);
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);

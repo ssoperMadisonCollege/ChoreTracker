@@ -43,7 +43,7 @@ public class UserDao {
      * READ step in CRUD (CREATE READ UPDATE DELETE)
      *
      * @param userName the user's userName
-     * @return user
+     * @return user user
      */
     public User getUser(String userName) {
         User user = null;
@@ -95,7 +95,7 @@ public class UserDao {
 
     /**
      * delete a user by userName
-     *
+     * <p>
      * DELETE step in CRUD (CREATE READ UPDATE DELETE)
      *
      * @param userName the user's user name
@@ -121,7 +121,7 @@ public class UserDao {
 
     /**
      * Update the user
-     *
+     * <p>
      * UPDATE step in CRUD (CREATE READ UPDATE DELETE)
      *
      * @param user the user

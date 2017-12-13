@@ -15,9 +15,9 @@ import java.util.List;
 
 /**
  * A simple servlet to search for chores.
+ *
  * @author ssoper
  */
-
 @WebServlet(
         urlPatterns = {"/choreSearch"}
 )

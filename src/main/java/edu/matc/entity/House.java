@@ -29,7 +29,7 @@ public class House implements Serializable {
      * Partial constructor.
      *
      * @param houseName the house name
-     * @param user the username
+     * @param user      the username
      */
     public House(
             String houseName,
@@ -44,7 +44,7 @@ public class House implements Serializable {
      *
      * @param houseId   the house id
      * @param houseName the house name
-     * @param user the username
+     * @param user      the username
      */
     public House(
             int houseId,
@@ -99,12 +99,22 @@ public class House implements Serializable {
     }
 
 
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_name", referencedColumnName = "user_name", nullable = false)
     public User getUser() {
         return user;
     }
 
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
     public void setUser(User user) {
         this.user = user;
     }

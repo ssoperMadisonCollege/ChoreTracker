@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
+/**
+ * A simple servlet for Login.
+ */
 @WebServlet (
         urlPatterns = {"/login"}
 )

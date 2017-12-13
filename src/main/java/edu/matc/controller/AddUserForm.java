@@ -12,9 +12,9 @@ import java.io.IOException;
 
 /**
  * A simple servlet to welcome the userRole.
+ *
  * @author ssoper
  */
-
 @WebServlet(
         urlPatterns = {"/addUserForm"}
 )

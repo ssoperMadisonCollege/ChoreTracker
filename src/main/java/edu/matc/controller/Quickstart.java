@@ -21,6 +21,9 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The Quickstart class for the google calendar API.
+ */
 public class Quickstart {
     /** Application name. */
     private static final String APPLICATION_NAME =
@@ -60,8 +63,9 @@ public class Quickstart {
 
     /**
      * Creates an authorized Credential object.
+     *
      * @return an authorized Credential object.
-     * @throws IOException
+     * @throws IOException the io exception
      */
     public static Credential authorize() throws IOException {
         // Load client secrets.
@@ -86,8 +90,9 @@ public class Quickstart {
 
     /**
      * Build and return an authorized Calendar client service.
+     *
      * @return an authorized Calendar client service
-     * @throws IOException
+     * @throws IOException the io exception
      */
     public static com.google.api.services.calendar.Calendar
     getCalendarService() throws IOException {
@@ -98,6 +103,14 @@ public class Quickstart {
                 .build();
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws IOException the io exception
+     *
+     * TODO Move the main method into its own class
+     */
     public static void main(String[] args) throws IOException {
         // Build a new authorized API client service.
         // Note: Do not confuse this class with the

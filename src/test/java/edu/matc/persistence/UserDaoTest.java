@@ -19,10 +19,10 @@ import static org.junit.Assert.*;
  */
 public class UserDaoTest {
 
+
     UserDao dao;
     int numberOfUsersInDatabase;
     User user;
-
     private final Logger log = Logger.getLogger(this.getClass());
 
     @Before
@@ -106,6 +106,4 @@ public class UserDaoTest {
         assertTrue(user != null);
         assertEquals("The first name wasn't successfully updated.", "Foo_bar", user.getFirstName());
     }
-
-    //TODO use .equals() on each entity for easy testing - insert a user to the db and read it back
 }

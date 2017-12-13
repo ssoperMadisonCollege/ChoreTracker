@@ -43,7 +43,7 @@ public class HouseDao {
      * READ step in CRUD (CREATE READ UPDATE DELETE)
      *
      * @param id the house's id
-     * @return house
+     * @return house house
      */
     public House getHouse(int id) {
         House house = null;

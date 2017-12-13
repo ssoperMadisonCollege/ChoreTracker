@@ -107,6 +107,4 @@ public class UserRoleDaoTest {
         userRoleDao.updateUserRole(userRole);
         assertEquals("The user role name wasn't successfully updated.", "fakeRoleName", userRole.getRoleName());
     }
-
-    //TODO use .equals() on each entity for easy testing - insert a userRole to the db and read it back
 }

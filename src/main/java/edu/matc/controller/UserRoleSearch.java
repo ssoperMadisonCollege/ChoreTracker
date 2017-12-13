@@ -15,9 +15,9 @@ import java.util.List;
 
 /**
  * A simple servlet to welcome the userRole.
+ *
  * @author ssoper
  */
-
 @WebServlet(
         urlPatterns = {"/userRoleSearch"}
 )

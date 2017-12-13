@@ -18,9 +18,9 @@ import java.io.IOException;
 
 /**
  * A simple servlet to add a user and a house.
+ *
  * @author ssoper
  */
-
 @WebServlet(
         urlPatterns = {"/addUser"}
 )

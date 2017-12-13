@@ -19,6 +19,7 @@ import static org.junit.Assert.*;
  */
 public class HouseDaoTest {
 
+
     HouseDao dao;
     int numberOfHousesInDatabase;
     private final Logger log = Logger.getLogger(this.getClass());
@@ -108,6 +109,4 @@ public class HouseDaoTest {
         assertTrue(house != null);
         assertEquals("The house name wasn't successfully updated.", "anotherTestHouse", house.getHouseName());
     }
-
-    //TODO use .equals() on each entity for easy testing - insert a house to the db and read it back
 }

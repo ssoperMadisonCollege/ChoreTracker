@@ -53,83 +53,163 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
+    /**
+     * Gets user name.
+     *
+     * @return the user name
+     */
     @Id
     @Column(name = "user_name")
     public String getUserName() {
         return userName;
     }
 
+    /**
+     * Sets user name.
+     *
+     * @param userName the user name
+     */
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
 
+    /**
+     * Gets first name.
+     *
+     * @return the first name
+     */
     @Basic
     @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets first name.
+     *
+     * @param firstName the first name
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Gets last name.
+     *
+     * @return the last name
+     */
     @Basic
     @Column(name = "last_name")
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Sets last name.
+     *
+     * @param lastName the last name
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
     @Basic
     @Column(name = "user_password")
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
     @Basic
     @Column(name = "user_email")
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets email.
+     *
+     * @param email the email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Gets phone.
+     *
+     * @return the phone
+     */
     @Basic
     @Column(name = "user_phone")
     public String getPhone() {
         return phone;
     }
 
+    /**
+     * Sets phone.
+     *
+     * @param phone the phone
+     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
+    /**
+     * Gets roles.
+     *
+     * @return the roles
+     */
     @OneToMany(mappedBy = "user")
     @Cascade({CascadeType.SAVE_UPDATE, CascadeType.DELETE})
     public Set<UserRole> getRoles() {
         return roles;
     }
 
+    /**
+     * Sets roles.
+     *
+     * @param roles the roles
+     */
     public void setRoles(Set<UserRole> roles) {
         this.roles = roles;
     }
 
+    /**
+     * Gets houses.
+     *
+     * @return the houses
+     */
     @OneToMany(mappedBy = "user")
     @Cascade({CascadeType.SAVE_UPDATE, CascadeType.DELETE})
     public Set<House> getHouses() {
         return house;
     }
 
+    /**
+     * Sets houses.
+     *
+     * @param house the house
+     */
     public void setHouses(Set<House> house) {
         this.house = house;
     }

@@ -15,9 +15,9 @@ import java.util.List;
 
 /**
  * A simple servlet to search for houses.
+ *
  * @author ssoper
  */
-
 @WebServlet(
         urlPatterns = {"/houseSearch"}
 )
