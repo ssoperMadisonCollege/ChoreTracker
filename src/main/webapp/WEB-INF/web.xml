@@ -34,25 +34,12 @@
     <role-name>administrator</role-name>
   </security-role>
 
-  <!-- Protect everything within the "investing" directory. -->
-  <security-constraint>
-    <web-resource-collection>
-      <web-resource-name>ChoreTracker</web-resource-name>
-      <url-pattern>/edit.jsp</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-      <!-- <role-name>registered-user</role-name> -->
-      <role-name>administrator</role-name>
-    </auth-constraint>
-  </security-constraint>
-
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>userSearch</web-resource-name>
       <url-pattern>/userSearch</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <!-- <role-name>registered-user</role-name> -->
       <role-name>administrator</role-name>
     </auth-constraint>
   </security-constraint>
@@ -63,7 +50,7 @@
       <url-pattern>/choreSearch</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <!-- <role-name>registered-user</role-name> -->
+      <role-name>registered-user</role-name>
       <role-name>administrator</role-name>
     </auth-constraint>
   </security-constraint>
@@ -74,7 +61,7 @@
       <url-pattern>/houseSearch</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <!-- <role-name>registered-user</role-name> -->
+      <role-name>registered-user</role-name>
       <role-name>administrator</role-name>
     </auth-constraint>
   </security-constraint>
@@ -85,7 +72,6 @@
       <url-pattern>/userRoleSearch</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <!-- <role-name>registered-user</role-name> -->
       <role-name>administrator</role-name>
     </auth-constraint>
   </security-constraint>
